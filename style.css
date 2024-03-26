@@ -1,0 +1,34 @@
+*{
+
+}
+
+body{
+    background-color: rgb(234, 233, 232);
+}
+
+
+/* AJUSTAR IMAGENES DEL CARRUSEL */
+.carousel-item img {
+    height: 500px; /* Ajusta la altura*/
+    object-fit: cover; /* Esto asegura que la imagen cubra el area sin perder sus proporciones */
+    width: 100%; /* Mantiene la imagen a lo ancho del contenedor */
+}
+
+
+.titulo {
+    text-align: center;
+    margin-top: 2vh; 
+    /* La unidad vh en CSS se refiere al "viewport height" (altura de la ventana de visualización), y 1vh es igual al 1% de la altura del viewport.  */
+    
+
+}
+
+
+#form{
+    background-color: aliceblue;
+    padding: 2%;
+    margin-bottom: 5%;
+
+}
+
+
