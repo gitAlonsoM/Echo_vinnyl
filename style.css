@@ -38,4 +38,12 @@ body{
     background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
+#activePage{
+    color: black;
+    font-weight: bolder;
+}
 
+#barra ul li:hover{
+    scale: 1.2;
+
+}
