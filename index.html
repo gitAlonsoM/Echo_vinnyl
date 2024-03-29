@@ -603,8 +603,12 @@ git branch -a  (locales y remotas)
 git branch     (solo locales)
 
 
-*Cambiarse de branch
-
+*Cambiarse a la branch Main y fusionar cambios 
+Antes, guardar todos los cambios de la branch actual.
+git checkout main   (cambiarse de la rama actual a la rama main localmente)
+git pull origin main (actualizar la rama main con los ultimos datos remotos)
+git merge PedritoBranch  (fusiona tu branch de trabajo (por ejemplo, PedritoBranch) en main)
+git push origin main  (guardar los datos en main del repositorio remoto )
 
 
 __________________________________________________________
