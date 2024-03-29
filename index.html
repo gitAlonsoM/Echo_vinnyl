@@ -592,20 +592,21 @@ git clone URL_DEL_REPOSITORIO
 __________________________________________________________
 *BRANCH
 
-*CREAR BRANCH
-git branch nombre_branch   (crearla)
-git checkout nombre_branch   (cambiarse)
-git push -u origin nombre_branch (publicar branch al repositorio remoto)
-
-
 *Listar branches disponibles
 git branch -a  (locales y remotas)
 git branch     (solo locales)
 
 
-*Cambiarse a la branch Main y fusionar cambios 
-Antes, guardar todos los cambios de la branch actual.
-git checkout main   (cambiarse de la rama actual a la rama main localmente)
+*CREAR BRANCH - CAMBIARSE
+git branch nombre_branch   (crearla)
+git checkout nombre_branch   (cambiarse)
+git push -u origin nombre_branch (publicar branch al repositorio remoto)
+
+
+
+*Cambiarse a la branch Main y fusionar cambios (Sirve para cambiarse de branches de manera general, no solo para el main)
+Antes, guardar todos los cambios de la branch actual, o dara error.
+git checkout main   (cambiarse de la rama actual a la rama main localmente, reemplazar "main" en caso de querer cambiarse a otra rama)
 git pull origin main (actualizar la rama main con los ultimos datos remotos)
 git merge PedritoBranch  (fusiona tu branch de trabajo (por ejemplo, PedritoBranch) en main)
 git push origin main  (guardar los datos en main del repositorio remoto )
