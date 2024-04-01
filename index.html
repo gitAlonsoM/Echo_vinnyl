@@ -526,28 +526,30 @@
 
 
 <!-- 
-
-*Ctl+ñ Terminal
+*Terminal
+Ctl + ñ 
 
 _____________________________________________________________
 *CONFIGURAR IDENTIDAD 
 Utilizar cada vez que se use una nueva PC
-git config --global user.name "Nombre de Usuario"
-git config --global user.email "correo@example.com"
+1° git config --global user.name "Nombre de Usuario"
+2° git config --global user.email "correo@example.com"
 
 
 
 ____________________________________________________________
 *GUARDAR CAMBIOS
-git add .
-git commit -m "cambios realizados..."
-git push origin nombre_branch / Ejemplo: git push origin main 
+1° git add .
+2° git commit -m "cambios realizados..."
+3° git push origin nombre_branch  (nombre_branch: Nombre del branch actual que se esta guardando)
+              Ejemplo: git push origin main  
   
 
 
 _____________________________________________________________
 *ACTUALIZAR PROYECTO
 1° Estar en el branch que se desea actualizar.
+
 Hacer git pull del nombre del branch que se desea traer hacia el branch actual.
 Ejemplo: Se esta actualmente en el branch A y se desea actualizar el branch A con los datos del branch B. 
 Estando en el branch A se usara : git pull origin B
