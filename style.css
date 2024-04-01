@@ -40,10 +40,27 @@ body{
 
 #activePage{
     color: black;
-    font-weight: bolder;
+    font-weight: 500;
 }
 
-#barra ul li:hover{
-    scale: 1.2;
+
+/* Agregar efecto sobre la barra */
+.nav-item .nav-link:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out; /* Opcional: añade suavidad a la transición */
+}
+
+
+/* Modificar navbar tamaño y espaciado de elementos */
+.navbar-nav{
+   /*  background-color: red; */
+    width: 60vw;  /*    vh = viewport height   1vh = 1% del alto de la pantalla
+                        vw= viewport width  1vw = 1% del ancho de la pantalla  */
+
+    display: flex;
+    justify-content: space-around;
+
+    
 
 }
+

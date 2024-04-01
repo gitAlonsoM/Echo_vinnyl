@@ -23,10 +23,11 @@
  
 
   <body>
+   
     <!--* BARRA DE NAVEGACION -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">TIENDA DE VINILOS</a>
+        <a class="navbar-brand" href="#">TIENDA DE VINILOS</a> <!-- Agregar logo -->
         <button
           class="navbar-toggler"
           type="button"
@@ -45,7 +46,7 @@
           <ul class="navbar-nav">
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
+              <a class="nav-link active" aria-current="page" id="activePage" href="index.html"
                 >INICIO</a
               >
             </li>
@@ -546,35 +547,71 @@
 
 
 <!-- 
-
-
             Breakpoint	   Class infix	    Dimensions
             Extra small	        None	      <576px
             Small	              sm	        ≥576px
             Medium	            md	        ≥768px
             Large	              lg	        ≥992px
             Extra large	        xl	        ≥1200px
-            Extra extra large	 xxl	        ≥1400px  
-          
+            Extra extra large	 xxl	        ≥1400px            
 -->
 
 
-<!-- 
-Ctl+ñ
 
+<!-- 
+
+*Ctl+ñ Terminal
+
+_____________________________________________________________
+*CONFIGURAR IDENTIDAD 
+Utilizar cada vez que se use una nueva PC
+git config --global user.name "Nombre de Usuario"
+git config --global user.email "correo@example.com"
+
+
+
+____________________________________________________________
 *GUARDAR CAMBIOS
 git add .
 git commit -m "cambios realizados..."
-git push origin main
+git push origin nombre_branch / Ejemplo: git push origin main 
+  
 
 
+_____________________________________________________________
 *ACTUALIZAR PROYECTO
-git pull origin main 
+git pull origin nombre_branch  / Ejemplo:  git pull origin main
 
 
+______________________________________________________________
 *CLONAR PROYECTO
 git clone URL_DEL_REPOSITORIO
 
+
+__________________________________________________________
+*BRANCH
+
+*Listar branches disponibles
+git branch -a  (locales y remotas)
+git branch     (solo locales)
+
+
+*CREAR BRANCH - CAMBIARSE
+git branch nombre_branch   (crearla)
+git checkout nombre_branch   (cambiarse)
+git push -u origin nombre_branch (publicar branch al repositorio remoto (solo la primera vez que es creada))
+
+
+
+*Cambiarse de branch
+git checkout nombre_branch   (cambiarse a otra branch. Guardar cambios antes en la branch actual, o tira error) 
+
+
+__________________________________________________________
+*OTROS
+asdasd
+adasd
+ASDASDASDASAD
 -->
 
 
