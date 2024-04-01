@@ -547,7 +547,13 @@ git push origin nombre_branch / Ejemplo: git push origin main
 
 _____________________________________________________________
 *ACTUALIZAR PROYECTO
-git pull origin nombre_branch  / Ejemplo:  git pull origin main
+1° Estar en el branch que se desea actualizar.
+Hacer git pull del nombre del branch que se desea traer hacia el branch actual.
+Ejemplo: Se esta actualmente en el branch A y se desea actualizar el branch A con los datos del branch B. 
+Estando en el branch A se usara : git pull origin B
+Si se quiere actualizar el branch A con los datos más actuales de ese mismo branch entonces, estando en el branch A: git pull origin A
+
+2° git pull origin nombre_branch  / Ejemplo:  git pull origin main
 
 
 ______________________________________________________________
@@ -575,6 +581,15 @@ git checkout nombre_branch   (cambiarse a otra branch. Guardar cambios antes en 
 
 
 __________________________________________________________
+*Verificar que se esta en la carpeta correcta del repositorio del proyecto.
+Indica el "fetch": Obtener información y cambios del repositorio remoto. 
+          "push": Subir tus cambios locales al repositorio remoto. 
+En caso de tirar "fatal", probablemente se esta en la carpeta incorrecta.
+
+git remote -v 
+
+
+_________________________________________________________________
 *OTROS
 asdasd
 adasd
