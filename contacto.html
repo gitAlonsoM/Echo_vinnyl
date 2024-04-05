@@ -57,7 +57,7 @@
                 <a class="nav-link" href="usados.html">VINILOS USADOS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="envio.html">ENVIÓ</a>
+                <a class="nav-link" href="acerca.html">ACERCA DE</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.html">CONTACTO</a>
@@ -76,28 +76,36 @@
   
 
     <!-- * FORMULARIO --> 
-    <!-- nombre, correo, fono, asunto,  mensaje -->
-    <div class="container mt-5" id="formTotal">  <!-- mt "margin-top" rango 0 - 5 -->
-        <div class="row">
-          <div class="col-lg-6" id="form" ><!-- Large lg ≥992px Usado para ocupar el 50% del espacio de la pantalla. Debajo del 992 se ocupara el 100%-->
-            <form>
-              <div class="mb-3"> <!-- mb (margin-bottom) -->
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-              </div>
-              <div class="mb-3">
-                <label for="mensaje" class="form-label">Mensaje</label>
-                <textarea class="form-control" id="mensaje" rows="3" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-          </div>
+    <div class="container mt-5" id="formTotal">
+      <div class="row">
+        <div class="col-lg-6" id="form">
+          <form>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="tu-email@ejemplo.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input type="tel" class="form-control" id="telefono" placeholder="+56912345678" required>
+            </div>
+            <div class="mb-3">
+              <label for="asunto" class="form-label">Asunto</label>
+              <input type="text" class="form-control" id="asunto" placeholder="Asunto del mensaje" required>
+            </div>
+            <div class="mb-3">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
         </div>
       </div>
+    </div>
+    
     
 
 

@@ -62,3 +62,23 @@ body{
 
 }
 
+
+
+/* LOGO */
+.navbar-brand img {
+    height: auto; 
+    max-height: 70px; /* maxima altura */
+    width: auto; /* Mantener proporciones*/
+    
+  }
+  
+
+
+/* BOTONES CREAR E INICIAR SESION */
+.contenedor-sesion {
+    display: flex;
+    justify-content: right;
+  }
+.boton-sesion{
+    margin-right: 1%;
+}  
