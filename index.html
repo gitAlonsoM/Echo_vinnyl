@@ -15,93 +15,86 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
+<!-- 
 
+  Extension usadas: Better Comments
+
+ -->
 
 <body>
 
-  <!-- *Botón para abrir el modal de Crear Cuenta -->
-  <div class="contenedor-sesion">
-    <!-- Botón para abrir el modal de Crear Cuenta -->
-    <button type="button" class="btn btn-primary boton-sesion" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">
+  <!-- *Botones modal de Crear cuenta e iniciar sesion-->
+  <div class="contenedor-sesion bg-white">
+    <!--  btn-colores, mx my margenes en el eje x / y -->
+    <button type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">
       Crear mi cuenta
     </button>
   
-    <!-- Botón para abrir el modal de Iniciar Sesión -->
-    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">
+    <button type="button" class="btn btn-success mx-1 my-1" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">
       Iniciar sesión
     </button>
   </div>
   
 
-
-  <!-- Modal crear cuenta-->
-  <div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <!-- * Modal crear cuenta-->
+  <div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalLabel">CREAR MI CUENTA</h5>
+          <h5>CREAR MI CUENTA</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <!-- Contenido del formulario -->
+
+          <!-- Formulario del modal -->
           <form>
             <div class="mb-3">
-              <label for="username" class="form-label">Nombre de usuario</label>
               <input type="text" class="form-control" id="username" placeholder="Ingresa usuario" required>
             </div>
             <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="your-email@website.com" required>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
             </div>
             <div class="mb-3">
-              <label for="password" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="password" required>
+              <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
             </div>
             <div class="mb-3">
-              <label for="confirm-password" class="form-label">Confirmar contraseña</label>
-              <input type="password" class="form-control" id="confirm-password" required>
+              <input type="password" class="form-control" id="confirm-password" placeholder="Confirmar contraseña" required>
             </div>
-            <!-- Aquí agregarías tu captcha y otros controles de formulario -->
+            <button type="submit" class="btn btn-primary">Crear mi cuenta</button>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Crear mi cuenta</button>
+
         </div>
       </div>
     </div>
   </div>
+  
 
 
 
-  <!-- Modal de Iniciar Sesión -->
-  <div class="modal fade" id="iniciarSesionModal" tabindex="-1" aria-labelledby="iniciarSesionModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="iniciarSesionModalLabel">INICIAR SESIÓN</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Contenido del formulario de inicio de sesión -->
-          <form>
-            <div class="mb-3">
-              <label for="loginEmail" class="form-label">Email</label>
-              <input type="email" class="form-control" id="loginEmail" placeholder="tu-email@ejemplo.com" required>
-            </div>
-            <div class="mb-3">
-              <label for="loginPassword" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="loginPassword" required>
-            </div>
-            <!-- Aquí puedes añadir opciones adicionales como "Recuérdame" o enlaces para restablecer la contraseña -->
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-secondary">Iniciar sesión</button>
-        </div>
+  <!--* Modal de iniciar sesion -->
+ <div class="modal fade" id="iniciarSesionModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>INICIAR SESIÓN</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- formulario del modal -->
+        <form>
+          <div class="mb-3">
+            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" id="loginPassword" placeholder="Contraseña" required>
+          </div>
+          <button type="submit" class="btn btn-success">Iniciar sesión</button>
+        </form>
       </div>
     </div>
   </div>
+</div>
+
 
 
 
@@ -178,14 +171,14 @@
   </div>
 
 
-  <h1 class="titulo">Vive la música a otro nivel</h1>
+  <h1 class="titulo">Donde los clásicos cobran vida.</h1>
   <h2 class="titulo">VINILOS</h2>
 
   <br />
 
 
 
-  <!-- CUERPO PRINCIPAL CON LOS DISCOS -->
+  <!--* CUERPO PRINCIPAL CON LOS DISCOS  -->
 
   <!-- La clase container es una de las clases de Bootstrap diseñada para ser utilizada como contenedor principal que envuelve el contenido de una página web. Proporciona un espacio de "padding" (relleno) interno para evitar que el contenido toque los bordes de la pantalla, y también centra el contenido en la página con márgenes automáticos. Es parte del sistema de grid de Bootstra -->
 
@@ -463,6 +456,10 @@
     <div class="row">
       <div class="col-lg-6" id="form">
         <!-- Large lg ≥992px Usado para ocupar el 50% del espacio de la pantalla. Debajo del 992 se ocupara el 100%-->
+        
+        <h2>Envíanos un mensaje</h2>
+        <p style="font-weight:500;">Responderemos todas tus dudas.</p>
+        
         <form>
           <div class="mb-3"> <!-- mb (margin-bottom) -->
             <label for="nombre" class="form-label">Nombre</label>
@@ -488,7 +485,6 @@
 </html>
 
 
-<!--* https://vinilosparatodos.cl/  -->
 
 
 <!-- 

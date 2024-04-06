@@ -69,8 +69,7 @@ body{
     height: auto; 
     max-height: 70px; /* maxima altura */
     width: auto; /* Mantener proporciones*/
-    
-  }
+}
   
 
 
@@ -79,6 +78,3 @@ body{
     display: flex;
     justify-content: right;
   }
-.boton-sesion{
-    margin-right: 1%;
-}  
