@@ -37,7 +37,10 @@
   </div>
   
 
-  <!-- * Modal crear cuenta-->
+  
+  <!-- * Modal crear cuenta
+    Correcciones: Restriccion en nombre de usuario / Contraseña.
+  -->
   <div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -50,13 +53,13 @@
           <!-- Formulario del modal -->
           <form>
             <div class="mb-3">
-              <input type="text" class="form-control" id="username" placeholder="Ingresa usuario" required>
+              <input type="text" class="form-control" id="username" placeholder="Ingresa usuario" required minlength="6"> <!-- minimo 6 caracteres para el nombre de usuario -->
             </div>
             <div class="mb-3">
               <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
             </div>
             <div class="mb-3">
-              <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+              <input type="password" class="form-control" id="password" placeholder="Contraseña" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Debe contener al menos 6 caracteres, incluyendo una mayúscula, una minúscula y un número"><!-- minimo 6 caracteres para la contraseña. ademas de 1 mayuscula, minuscula, 1 numero, -->
             </div>
             <div class="mb-3">
               <input type="password" class="form-control" id="confirm-password" placeholder="Confirmar contraseña" required>
