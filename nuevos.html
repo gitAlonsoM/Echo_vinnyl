@@ -23,10 +23,86 @@
  
 
   <body>
+    
+  <!-- *Botones modal de Crear cuenta e iniciar sesion-->
+  <div class="contenedor-sesion bg-white">
+    <!--  btn-colores, mx my margenes en el eje x / y -->
+    <button type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">
+      Crear mi cuenta
+    </button>
+  
+    <button type="button" class="btn btn-success mx-1 my-1" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">
+      Iniciar sesión
+    </button>
+  </div>
+  
+
+  
+  <!-- * Modal crear cuenta
+    Correcciones: Restriccion en nombre de usuario / Contraseña.
+  -->
+  <div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>CREAR MI CUENTA</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <!-- Formulario del modal -->
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="username" placeholder="Ingresa usuario" required minlength="6"> <!-- minimo 6 caracteres para el nombre de usuario -->
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="password" placeholder="Contraseña" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Debe contener al menos 6 caracteres, incluyendo una mayúscula, una minúscula y un número"><!-- minimo 6 caracteres para la contraseña. ademas de 1 mayuscula, minuscula, 1 numero, -->
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="confirm-password" placeholder="Confirmar contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Crear mi cuenta</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  <!--* Modal de iniciar sesion -->
+ <div class="modal fade" id="iniciarSesionModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>INICIAR SESIÓN</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- formulario del modal -->
+        <form>
+          <div class="mb-3">
+            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" id="loginPassword" placeholder="Contraseña" required>
+          </div>
+          <button type="submit" class="btn btn-success">Iniciar sesión</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!--* BARRA DE NAVEGACION -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">TIENDA DE VINILOS</a>
+        <a class="navbar-brand" href="index.html"><img src="imagenes/logo.png" alt=""></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -55,10 +131,10 @@
               <a class="nav-link" href="usados.html">VINILOS USADOS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">ENVIÓ</a>
+              <a class="nav-link" href="acerca.html">ACERCA DE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">CONTACTO</a>
+              <a class="nav-link" href="contacto.html">CONTACTO</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="carrito.html">CARRITO</a>
@@ -71,7 +147,7 @@
 
     
 
-    <h1 class="titulo">Vive la música a otro nivel</h1>
+    <h1 class="titulo">Donde los clásicos cobran vida.</h1>
     <h2 class="titulo">VINILOS NUEVOS</h2>
 
     <br />
@@ -88,177 +164,88 @@
           
           <div class="card">
             <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
+              src="imagenes-nuevos/ACDC600x600_c.jpg"
               class="card-img-top"
-              alt="..."
+              alt="Imagen-Disco"
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
+              <h5 class="card-title">AC/DC</h5>
+              <p class="card-text">Highway To Hell</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
             </ul>
             <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
             </div>
           </div>
         </div>
         <div class="col-6 col-lg-4 col-xl-3 border">
           <div class="card">
             <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
+              src="imagenes-nuevos/Faith-No-More.jpeg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
+              <h5 class="card-title">Faith No More</h5>
+              <p class="card-text">Angel Dust</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
             </ul>
             <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
             </div>
           </div>
         </div>
         <div class="col-6 col-lg-4 col-xl-3 border">
           <div class="card">
             <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
+              src="imagenes-nuevos/Green-Day-D-600x600_c.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
+              <h5 class="card-title">Green Day</h5>
+              <p class="card-text">Dookie</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
             </ul>
             <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
             </div>
           </div>
         </div>
         <div class="col-6 col-lg-4 col-xl-3 border">
           <div class="card">
             <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
+              src="imagenes-nuevos/Iron-Maiden-600x600.jpeg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
+              <h5 class="card-title">Iron Maiden</h5>
+              <p class="card-text">Prayer</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
             </ul>
             <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-lg-4 col-xl-3 border">
-          <div class="card">
-            <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-4 col-xl-3 border">
-          <div class="card">
-            <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-4 col-xl-3 border">
-          <div class="card">
-            <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-4 col-xl-3 border">
-          <div class="card">
-            <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
             </div>
           </div>
         </div>
@@ -266,88 +253,88 @@
         <div class="col-6 col-lg-4 col-xl-3 border">
           <div class="card">
             <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
+              src="imagenes-nuevos/Jeff-Buckley.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
+              <h5 class="card-title">Jeff Buckley</h5>
+              <p class="card-text">Grace</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
             </ul>
             <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
             </div>
           </div>
         </div>
         <div class="col-6 col-lg-4 col-xl-3 border">
           <div class="card">
             <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
+              src="imagenes-nuevos/LP.MTM.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
+              <h5 class="card-title">Linkin Park</h5>
+              <p class="card-text">Minutes To Mignight</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
             </ul>
             <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
             </div>
           </div>
         </div>
         <div class="col-6 col-lg-4 col-xl-3 border">
           <div class="card">
             <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
+              src="imagenes-nuevos/LP.OML.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
+              <h5 class="card-title">Linkin Park</h5>
+              <p class="card-text">One More Light</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
             </ul>
             <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
             </div>
           </div>
         </div>
         <div class="col-6 col-lg-4 col-xl-3 border">
           <div class="card">
             <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
+              src="imagenes-nuevos/Pantera.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
+              <h5 class="card-title">Pantera</h5>
+              <p class="card-text">Cowboys From Hell</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
             </ul>
             <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
             </div>
           </div>
         </div>
@@ -355,88 +342,177 @@
         <div class="col-6 col-lg-4 col-xl-3 border">
           <div class="card">
             <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
+              src="imagenes-nuevos/Pettinellis.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
+              <h5 class="card-title">Pettinellis</h5>
+              <p class="card-text">Pettinellis 2</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
             </ul>
             <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
             </div>
           </div>
         </div>
         <div class="col-6 col-lg-4 col-xl-3 border">
           <div class="card">
             <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
+              src="imagenes-nuevos/Pink-Floyd-M.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
+              <h5 class="card-title">Pink Floyd</h5>
+              <p class="card-text">Meddle</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
             </ul>
             <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
             </div>
           </div>
         </div>
         <div class="col-6 col-lg-4 col-xl-3 border">
           <div class="card">
             <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
+              src="imagenes-nuevos/Pink-Floyd-D.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
+              <h5 class="card-title">Pink Floyd</h5>
+              <p class="card-text">The Dark Side Of The Moon</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
             </ul>
             <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
             </div>
           </div>
         </div>
         <div class="col-6 col-lg-4 col-xl-3 border">
           <div class="card">
             <img
-              src="imagenes/andres-valdes-YjxTbkvZbKA-unsplash.jpg"
+              src="imagenes-nuevos/Rammstein.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">of the card's content.</p>
+              <h5 class="card-title">Rammstein</h5>
+              <p class="card-text">Herzeleid</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
             </ul>
             <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-4 col-xl-3 border">
+          <div class="card">
+            <img
+              src="imagenes-nuevos/Soda-Stereo.sd.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Soda Stereo</h5>
+              <p class="card-text">Ruido Blanco</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4 col-xl-3 border">
+          <div class="card">
+            <img
+              src="imagenes-nuevos/Soda-Stereo.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Soda Stereo</h5>
+              <p class="card-text">Soda Stereo</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4 col-xl-3 border">
+          <div class="card">
+            <img
+              src="imagenes-nuevos/System-Of-A-Down.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">System Of A Down</h5>
+              <p class="card-text">Toxicity</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4 col-xl-3 border">
+          <div class="card">
+            <img
+              src="imagenes-nuevos/The-Killers.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">The Killers</h5>
+              <p class="card-text">Direct Hits</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">$50000</li>
+              <!-- <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li> -->
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carro</a>
             </div>
           </div>
         </div>
@@ -445,29 +521,33 @@
 
     
 
-    <!-- * FORMULARIO --> 
-    <div class="container mt-5" id="formTotal">  <!-- mt "margin-top" rango 0 - 5 -->
-      <div class="row">
-        <div class="col-lg-6" id="form" ><!-- Large lg ≥992px Usado para ocupar el 50% del espacio de la pantalla. Debajo del 992 se ocupara el 100%-->
-          <form>
-            <div class="mb-3"> <!-- mb (margin-bottom) -->
-              <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-            </div>
-            <div class="mb-3">
-              <label for="mensaje" class="form-label">Mensaje</label>
-              <textarea class="form-control" id="mensaje" rows="3" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-          </form>
-        </div>
+    <!-- * FORMULARIO -->
+  <div class="container mt-5" id="formTotal"> <!-- mt "margin-top" rango 0 - 5 -->
+    <div class="row">
+      <div class="col-lg-6" id="form">
+        <!-- Large lg ≥992px Usado para ocupar el 50% del espacio de la pantalla. Debajo del 992 se ocupara el 100%-->
+        
+        <h2>Envíanos un mensaje</h2>
+        <p style="font-weight:400;">Responderemos todas tus dudas.</p>
+        
+        <form>
+          <div class="mb-3"> <!-- mb (margin-bottom) -->
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
       </div>
     </div>
-    
+  </div>
 
   </body>
 </html>

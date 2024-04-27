@@ -24,10 +24,86 @@
 
 
 <body>
+  
+  <!-- *Botones modal de Crear cuenta e iniciar sesion-->
+  <div class="contenedor-sesion bg-white">
+    <!--  btn-colores, mx my margenes en el eje x / y -->
+    <button type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">
+      Crear mi cuenta
+    </button>
+  
+    <button type="button" class="btn btn-success mx-1 my-1" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">
+      Iniciar sesión
+    </button>
+  </div>
+  
+
+  
+  <!-- * Modal crear cuenta
+    Correcciones: Restriccion en nombre de usuario / Contraseña.
+  -->
+  <div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>CREAR MI CUENTA</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <!-- Formulario del modal -->
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="username" placeholder="Ingresa usuario" required minlength="6"> <!-- minimo 6 caracteres para el nombre de usuario -->
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="password" placeholder="Contraseña" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Debe contener al menos 6 caracteres, incluyendo una mayúscula, una minúscula y un número"><!-- minimo 6 caracteres para la contraseña. ademas de 1 mayuscula, minuscula, 1 numero, -->
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="confirm-password" placeholder="Confirmar contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Crear mi cuenta</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  <!--* Modal de iniciar sesion -->
+ <div class="modal fade" id="iniciarSesionModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>INICIAR SESIÓN</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- formulario del modal -->
+        <form>
+          <div class="mb-3">
+            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" id="loginPassword" placeholder="Contraseña" required>
+          </div>
+          <button type="submit" class="btn btn-success">Iniciar sesión</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
   <!--* BARRA DE NAVEGACION -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">TIENDA DE VINILOS</a>
+      <a class="navbar-brand" href="index.html"><img src="imagenes/logo.png" alt=""></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -51,13 +127,13 @@
             <a class="nav-link" href="nuevos.html">VINILOS NUEVOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="usados.html">VINILOS USADOS</a>
+            <a class="nav-link active" aria-current="page" id="activePage" href="usados.html">VINILOS USADOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">ENVIÓ</a>
+            <a class="nav-link" href="acerca.html">ACERCA DE</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">CONTACTO</a>
+            <a class="nav-link" href="contacto.html">CONTACTO</a>
           </li>
 
           <li class="nav-item">
@@ -70,7 +146,7 @@
 
   
 
-  <h1 class="titulo">Vive la música a otro nivel</h1>
+  <h1 class="titulo">Donde los clásicos cobran vida.</h1>
   <h2 class="titulo">VINILOS USADOS</h2>
 
   <br />
@@ -89,7 +165,7 @@
           <img
             src="imagenes-usados/Coda.jpeg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
             <h5 class="card-title">Led Zeppelin</h5>
@@ -111,7 +187,7 @@
           <img
           src="imagenes-usados/Deep-Purple-in-rock.jpeg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
             <h5 class="card-title">Deep Purple</h5>
@@ -133,7 +209,7 @@
           <img
           src="imagenes-usados/Guns-Apetite.jpeg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
             <h5 class="card-title">Guns N' Roses </h5>
@@ -155,7 +231,7 @@
           <img
           src="imagenes-usados/Gustavo-Cerati-–-Bocanada.jpg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
             <h5 class="card-title">Gustavo Cerati</h5>
@@ -178,11 +254,11 @@
           <img
           src="imagenes-usados/Gustavo-Cerati-–-Siempre-Es-Hoy.jpg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">of the card's content.</p>
+            <h5 class="card-title">Gustavo Cerati</h5>
+            <p class="card-text">Siempre es hoy.</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$35.000</li>
@@ -200,11 +276,11 @@
           <img
           src="imagenes-usados/John-Williams.-The-London-Symphony-Orchestra-–-Star-Wars-The-Empire-Strikes-Back-OST.jpg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">of the card's content.</p>
+            <h5 class="card-title">The london Symphony Orchestra John Williams</h5>
+            <p class="card-text">Star wars The Empire Strikes Back OST.</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$35.000</li>
@@ -222,11 +298,11 @@
           <img
           src="imagenes-usados/Led-Zeppelin-–-Led-Zeppelin.jpg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">of the card's content.</p>
+            <h5 class="card-title">Led Zeppelin</h5>
+            <p class="card-text">Led Zeppelin.</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$35.000</li>
@@ -244,11 +320,11 @@
           <img
           src="imagenes-usados/Los-Jaivas-–-Aconcagua.jpg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">of the card's content.</p>
+            <h5 class="card-title">Los Jaivas</h5>
+            <p class="card-text">Aconcagua.</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$35.000</li>
@@ -267,11 +343,11 @@
           <img
           src="imagenes-usados/Los-Jaivas-–-Obras-Cumbres.jpg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">of the card's content.</p>
+            <h5 class="card-title">Los Jaivas</h5>
+            <p class="card-text">Obras Cumbres.</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$35.000</li>
@@ -289,11 +365,11 @@
           <img
           src="imagenes-usados/Metallica-–-Master-Of-Puppets.jpg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">of the card's content.</p>
+            <h5 class="card-title">Metallica</h5>
+            <p class="card-text">Master Of Puppets.</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$35.000</li>
@@ -311,11 +387,11 @@
           <img
           src="imagenes-usados/Pink-Floyd-–-Meddle.jpg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">of the card's content.</p>
+            <h5 class="card-title">Pink Floyd</h5>
+            <p class="card-text">Middle.</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$35.000</li>
@@ -333,11 +409,11 @@
           <img
           src="imagenes-usados/Pink-Floyd-–-The-Dark-Side-Of-The-Moon.jpg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">of the card's content.</p>
+            <h5 class="card-title">Pink Floyd</h5>
+            <p class="card-text">The Dark Side of the moon.</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$35.000</li>
@@ -356,11 +432,11 @@
           <img
           src="imagenes-usados/Porcupine-Tree-–-Fear-Of-A-Blank-Planet.jpg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">of the card's content.</p>
+            <h5 class="card-title">Porcupine Tree</h5>
+            <p class="card-text">Fear Of A Blank Planet.</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$35.000</li>
@@ -378,11 +454,11 @@
           <img
           src="imagenes-usados/Queen-GE-1.jpg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">of the card's content.</p>
+            <h5 class="card-title">Queen</h5>
+            <p class="card-text">GE.</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$35.000</li>
@@ -400,11 +476,11 @@
           <img
           src="imagenes-usados/Radiohead-–-In-Rainbows.jpg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">of the card's content.</p>
+            <h5 class="card-title">Radiohead</h5>
+            <p class="card-text">In Rainbows.</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$35.000</li>
@@ -422,11 +498,11 @@
           <img
           src="imagenes-usados/Rage-Against-The-Machine-–-Rage-Against-The-Machine.jpg"
             class="card-img-top"
-            alt="..."
+            alt="Imagen-Disco"
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">of the card's content.</p>
+            <h5 class="card-title">Rage Against The Machine</h5>
+            <p class="card-text">Rage Against The Machine.</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$35.000</li>
@@ -444,10 +520,15 @@
 
   
 
-  <!-- * FORMULARIO --> 
-  <div class="container mt-5" id="formTotal">  <!-- mt "margin-top" rango 0 - 5 -->
+  <!-- * FORMULARIO -->
+  <div class="container mt-5" id="formTotal"> <!-- mt "margin-top" rango 0 - 5 -->
     <div class="row">
-      <div class="col-lg-6" id="form" ><!-- Large lg ≥992px Usado para ocupar el 50% del espacio de la pantalla. Debajo del 992 se ocupara el 100%-->
+      <div class="col-lg-6" id="form">
+        <!-- Large lg ≥992px Usado para ocupar el 50% del espacio de la pantalla. Debajo del 992 se ocupara el 100%-->
+        
+        <h2>Envíanos un mensaje</h2>
+        <p style="font-weight:400;">Responderemos todas tus dudas.</p>
+        
         <form>
           <div class="mb-3"> <!-- mb (margin-bottom) -->
             <label for="nombre" class="form-label">Nombre</label>
@@ -467,6 +548,7 @@
     </div>
   </div>
   
+ 
 
 </body>
 </html>

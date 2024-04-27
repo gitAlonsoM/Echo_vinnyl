@@ -22,10 +22,86 @@
   <!--* https://vinilosparatodos.cl/  -->
 
   <body>
+    
+  <!-- *Botones modal de Crear cuenta e iniciar sesion-->
+  <div class="contenedor-sesion bg-white">
+    <!--  btn-colores, mx my margenes en el eje x / y -->
+    <button type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">
+      Crear mi cuenta
+    </button>
+  
+    <button type="button" class="btn btn-success mx-1 my-1" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">
+      Iniciar sesión
+    </button>
+  </div>
+  
+
+  
+  <!-- * Modal crear cuenta
+    Correcciones: Restriccion en nombre de usuario / Contraseña.
+  -->
+  <div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>CREAR MI CUENTA</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <!-- Formulario del modal -->
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="username" placeholder="Ingresa usuario" required minlength="6"> <!-- minimo 6 caracteres para el nombre de usuario -->
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="password" placeholder="Contraseña" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Debe contener al menos 6 caracteres, incluyendo una mayúscula, una minúscula y un número"><!-- minimo 6 caracteres para la contraseña. ademas de 1 mayuscula, minuscula, 1 numero, -->
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="confirm-password" placeholder="Confirmar contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Crear mi cuenta</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  <!--* Modal de iniciar sesion -->
+ <div class="modal fade" id="iniciarSesionModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>INICIAR SESIÓN</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- formulario del modal -->
+        <form>
+          <div class="mb-3">
+            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" id="loginPassword" placeholder="Contraseña" required>
+          </div>
+          <button type="submit" class="btn btn-success">Iniciar sesión</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!--* BARRA DE NAVEGACION -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">TIENDA DE VINILOS</a>
+        <a class="navbar-brand" href="index.html"><img src="imagenes/logo.png" alt=""></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -52,10 +128,10 @@
               <a class="nav-link" href="usados.html">VINILOS USADOS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">ENVIÓ</a>
+              <a class="nav-link" href="acerca.html">ACERCA DE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">CONTACTO</a>
+              <a class="nav-link" href="contacto.html">CONTACTO</a>
             </li>
             <li class="nav-item">
               <a
@@ -117,8 +193,8 @@
                           />
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3">
-                          <h6 class="text-muted">vinilousado</h6>
-                          <h6 class="text-black mb-0">vinilonuevo</h6>
+                          <h6 class="text-muted">Vinilo usado</h6>
+                          <h6 class="text-black mb-0">Vinilo nuevo</h6>
                         </div>
                         <div
                           class="col-md-3 col-lg-3 col-xl-2 d-flex"
@@ -155,8 +231,8 @@
                           />
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3">
-                          <h6 class="text-muted">vinilousado</h6>
-                          <h6 class="text-black mb-0">vinilonuevo</h6>
+                          <h6 class="text-muted">Vinilo usado</h6>
+                          <h6 class="text-black mb-0">Vinilo nuevo</h6>
                         </div>
                         <div
                           class="col-md-3 col-lg-3 col-xl-2 d-flex"
@@ -193,8 +269,8 @@
                           />
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3">
-                          <h6 class="text-muted">vinilousado</h6>
-                          <h6 class="text-black mb-0">vinilonuevo</h6>
+                          <h6 class="text-muted">Vinilo usado</h6>
+                          <h6 class="text-black mb-0">Vinilo nuevo</h6>
                         </div>
                         <div
                           class="col-md-3 col-lg-3 col-xl-2 d-flex"
