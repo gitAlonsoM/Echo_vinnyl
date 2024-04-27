@@ -558,6 +558,14 @@ git push -u origin nombre_branch (publicar branch al repositorio remoto (solo la
 git checkout nombre_branch   (cambiarse a otra branch. Guardar cambios antes en la branch actual, o tira error) 
 
 
+*Actualiza branch con datos de otro branch
+1.- Conectarse al branch que requiere los datos
+Luego desde el branch que necesita los datos usar el siguien comando, con el nombre del branch que posee los datos requeridos
+git merge nombre_branch
+2.- Luego de traer los datos, se deben resolver los conflictos y finalmente guardar el branch actual.
+git commit -m "Merch realizado... desde ... a .... etc"
+
+
 __________________________________________________________
 *Verificar que se esta en la carpeta correcta del repositorio del proyecto.
 Indica el "fetch": Obtener información y cambios del repositorio remoto. 
