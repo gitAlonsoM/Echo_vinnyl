@@ -76,6 +76,7 @@ body{
     max-height: 8vh; /* maxima altura */
     width: auto; /* Mantener proporciones*/
     margin-left: 10%;
+    
 }
   
 
@@ -84,6 +85,15 @@ body{
 .contenedor-sesion {
     display: flex;
     justify-content: right;
-  }
+}
 
 
+
+
+/* Modificar el tamño de las card por debajo de los760px  */
+@media (max-width: 760px){ 
+    .card-img-top{
+        height: auto !important; /* forzar */
+    }
+
+}
