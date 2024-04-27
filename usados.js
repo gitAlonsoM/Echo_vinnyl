@@ -21,9 +21,11 @@ fetch('https://musicbrainz.org/ws/2/release-group/?query=tag:electronic&limit=10
 
 */
 
+let genero = "classic";
+let cantidad = 50;
 
 // JS: Asegúrate de tener un contenedor con id "albums-container" en tu HTML
-fetch('https://musicbrainz.org/ws/2/release-group/?query=tag:metal&limit=30&fmt=json')
+fetch(`https://musicbrainz.org/ws/2/release-group/?query=tag:${genero}&limit=${cantidad}&fmt=json`)
 .then(response => response.json())
 .then(data => {
     const albumsContainer = document.getElementById('albums-container'); 
