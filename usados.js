@@ -1,5 +1,3 @@
-
-
 /*
 *DOCUMENTACION API: https://musicbrainz.org/doc/MusicBrainz_API
 *API img de albunes: coverartarchive.org
@@ -20,52 +18,44 @@ fetch('https://musicbrainz.org/ws/2/release-group/?query=tag:electronic&limit=10
 
 
 */
+ 
+let genero = "rock";  // Variable global para el genero
+let cantidad = 20;    // Variable global para la cantidad de albumes a mostrar
 
-let genero = "classic";
-let cantidad = 50;
+let banda = "michael jackson"; 
 
-// JS: Asegúrate de tener un contenedor con id "albums-container" en tu HTML
-fetch(`https://musicbrainz.org/ws/2/release-group/?query=tag:${genero}&limit=${cantidad}&fmt=json`)
-.then(response => response.json())
-.then(data => {
-    const albumsContainer = document.getElementById('albums-container'); 
-    albumsContainer.innerHTML = ''; // Limpiar el contenedor
 
-    // Crear la estructura de fila que contiene todas las tarjetas
-    const row = document.createElement('div');
-    row.className = 'row';
+document.addEventListener('DOMContentLoaded', function() {
+    const searchForm = document.getElementById('searchForm');
+    const generoInput = document.getElementById('genreInput');
+    const bandaInput = document.getElementById('bandaInput');
+    const albumsContainer = document.getElementById('albums-container');
 
-    data['release-groups'].forEach(album => {
-        // Contenedor para cada tarjeta, con clases de columna de Bootstrap
+    function createCard(album, albumsContainer) {
         const colDiv = document.createElement('div');
         colDiv.className = 'col-6 col-lg-4 col-xl-3 border mb-4';
 
-        // Estructura de la tarjeta
         const card = document.createElement('div');
         card.className = 'card';
 
-        // Agregamos la imagen
         const img = document.createElement('img');
         img.className = 'card-img-top';
-        img.alt = 'Album Cover';        
-        img.style.height = '300px'; // Establece la altura de la imagen
-        img.src = 'https://via.placeholder.com/150'; // Imagen por defecto o desde API si está disponible
+        img.alt = 'Album Cover';
+        img.style.height = '300px';
+        img.src = 'imagenes/Portada_NoFound.png';
 
-        // Intento de obtener la imagen de portada del álbum
         fetch(`https://coverartarchive.org/release-group/${album.id}`)
         .then(response => response.json())
         .then(coverData => {
-            if (coverData.images && coverData.images.length > 0) {
+            if (coverData.images.length > 0) {
                 img.src = coverData.images[0].image;
             } else {
-                img.src ='https://via.placeholder.com/150'; // Imagen de relleno si no hay imagen disponible
-            }
-        })
+                img.src = 'imagenes/Portada_NoFound.png';
+            }        })
         .catch(() => {
-            img.src = 'https://via.placeholder.com/150'; // Imagen de relleno si ocurre un error al obtener la imagen
+            img.src = 'imagenes/Portada_NoFound.png';
         });
 
-        // Cuerpo de la tarjeta
         const cardBody = document.createElement('div');
         cardBody.className = 'card-body';
 
@@ -77,17 +67,14 @@ fetch(`https://musicbrainz.org/ws/2/release-group/?query=tag:${genero}&limit=${c
         artist.className = 'card-text';
         artist.textContent = album['artist-credit'].map(artist => artist.name).join(', ');
 
-        // Lista de grupo para el precio
         const listGroup = document.createElement('ul');
         listGroup.className = 'list-group list-group-flush';
-        
+
         const price = document.createElement('li');
         price.className = 'list-group-item';
-        price.textContent = '$20.000';
-
+        price.textContent = '$25.000';
         listGroup.appendChild(price);
 
-        // Pie de la tarjeta para los botones
         const cardFooter = document.createElement('div');
         cardFooter.className = 'card-body';
 
@@ -101,7 +88,6 @@ fetch(`https://musicbrainz.org/ws/2/release-group/?query=tag:${genero}&limit=${c
         addToCartButton.className = 'card-link';
         addToCartButton.textContent = 'Añadir al carro';
 
-        // Construir la tarjeta
         cardBody.appendChild(title);
         cardBody.appendChild(artist);
         card.appendChild(img);
@@ -110,18 +96,48 @@ fetch(`https://musicbrainz.org/ws/2/release-group/?query=tag:${genero}&limit=${c
         cardFooter.appendChild(buyButton);
         cardFooter.appendChild(addToCartButton);
         card.appendChild(cardFooter);
-
-        // Añadir la tarjeta a la columna y luego la columna a la fila
         colDiv.appendChild(card);
-        row.appendChild(colDiv);
+        albumsContainer.appendChild(colDiv);
+    }
+
+    function fetchAndDisplayAlbums(genre) {
+        albumsContainer.innerHTML = '';
+        const row = document.createElement('div');
+        row.className = 'row';
+
+
+        //fetch(`https://musicbrainz.org/ws/2/release-group/?query=artist:${banda} AND primarytype:album&limit=${cantidad}&fmt=json`)
+        fetch(`https://musicbrainz.org/ws/2/release-group/?query=tag:${genre}&limit=${cantidad}&fmt=json`)
+        .then(response => response.json())
+        .then(data => {
+            data['release-groups'].forEach(album => {
+                createCard(album, row);
+            });
+            albumsContainer.appendChild(row);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            const errorContainer = document.createElement('div');
+            errorContainer.textContent = 'Failed to load album data. Please try again later.';
+            albumsContainer.appendChild(errorContainer);
+        });
+    }
+
+    searchForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        genero = generoInput.value.trim();  // Actualizar la variable global 'genero' con el valor ingresado por el usuario
+        
+        //banda = bandaInput.value.trim();  // Actualizar la variable global 'BANDA' con el valor ingresado por el usuario
+
+        if (genero) {
+            fetchAndDisplayAlbums(genero);
+        }
+
+        /* if (banda) {
+            fetchAndDisplayAlbums(banda);
+        }
+        */
     });
 
-    // Añadir la fila al contenedor
-    albumsContainer.appendChild(row);
-})
-.catch(error => {
-    console.error('Error fetching data:', error);
-    const errorContainer = document.createElement('div');
-    errorContainer.textContent = 'Failed to load album data. Please try again later.';
-    albumsContainer.appendChild(errorContainer);
+    fetchAndDisplayAlbums(genero);  // Cargar albumes del genero inicial usando la variable global 'genero'
 });
