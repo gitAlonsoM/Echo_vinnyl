@@ -18,11 +18,21 @@ fetch('https://musicbrainz.org/ws/2/release-group/?query=tag:electronic&limit=10
 
 
 */
+
+
+/* 
+DISEÑO ARREGLADO
+VALIDACIONES de los FORM POR JS
+MAMEJO DE HTML POR JQERY
+CONSUMO DE 2 APIS
+USO DE LOCAL STORAGE
+*/
  
+
 let genero = "rock";  // Variable global para el genero
 let cantidad = 20;    // Variable global para la cantidad de albumes a mostrar
 
-let banda = "michael jackson"; 
+let banda = "pink floyd"; 
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -72,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const price = document.createElement('li');
         price.className = 'list-group-item';
-        price.textContent = '$25.000';
+        price.textContent = `$${35000}`;
         listGroup.appendChild(price);
 
         const cardFooter = document.createElement('div');
@@ -141,3 +151,78 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fetchAndDisplayAlbums(genero);  // Cargar albumes del genero inicial usando la variable global 'genero'
 });
+
+
+
+//______________________________________
+
+//VALIDACION FORMULARIO CREAR CUENTA
+
+let userName  = document.getElementById('username');
+let pass1 = document.getElementById('password');
+let pass2 = document.getElementById('confirm-password');
+   
+function btn_crear_cuenta(){
+    
+    console.log(userName.value)
+    console.log(userName.value.length)
+
+    console.log(pass1.value)
+    console.log(pass2.value)
+
+    let acc = 0;
+
+    //validar nombre
+    if (userName.value.length < 6 ){
+            alert("Debe contener al menos 6 caracteres");
+    }else{
+        //alert("Formato correcto");
+        acc+=1;
+    }
+
+
+    //validar pass
+    if (pass1.value.length < 6 ){
+        alert("Debe contener al menos 6 caracteres la pass");
+    }else{
+        //alert("Formato correcto");
+        if (pass1.value === pass2.value ){
+            alert("Las contraseñas son iguales");
+            acc+=1;
+        }else{
+            alert("Las contraseñas son diferentes");
+        }
+    }
+   
+
+
+    //validar email
+    // Get our input reference.
+    var emailField = document.getElementById('user-email');       
+    // Define our regular expression.
+    var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;  
+  
+    // Using test we can check if the text match the pattern
+    if( validEmail.test(emailField.value) ){
+          //alert('Email is valid, continue with form submission');
+          acc+=1;
+    }else{
+          alert('Email es invalido, ingrese un email correcto');
+    }
+
+
+    if (acc === 3){
+        alert("La cuenta a sido creada satisfactoriamente")
+        
+    }else{
+        alert("la cuenta no ha sido creada")
+    }
+    
+
+}
+
+
+
+
+  
+
