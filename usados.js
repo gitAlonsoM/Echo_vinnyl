@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const row = document.createElement('div');
         row.className = 'row';
 
-
+        /* agregar local storage */
         //fetch(`https://musicbrainz.org/ws/2/release-group/?query=artist:${banda} AND primarytype:album&limit=${cantidad}&fmt=json`)
         fetch(`https://musicbrainz.org/ws/2/release-group/?query=tag:${genre}&limit=${cantidad}&fmt=json`)
         .then(response => response.json())
