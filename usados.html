@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usados</title>
+    <title>Discos usados</title>
+    <link rel="icon" href="/imagenes/logo.png" type="image/png"> <!-- Añadir imagen en el navegador superior -->
 </head>
 <body>
     <link
@@ -38,11 +39,12 @@
   </div>
   
 
+
+  
+
   
   <!-- * Modal crear cuenta
-    Correcciones: Restriccion en nombre de usuario / Contraseña.
-  
-    !corregir que se cierre la ventana de crear cuenta solo con JS cuando todos los datos sean correctos, o el acumulador sea igual a 3
+    Correcciones 1° entrega: Restriccion en nombre de usuario / Contraseña.
   -->
   <div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
@@ -54,7 +56,7 @@
         <div class="modal-body">
 
           <!-- Formulario del modal -->
-          <form>
+          <form  id="formularioCrearCuenta">
             <div class="mb-3">
               <input type="text" class="form-control" id="username" placeholder="Ingresa usuario" required minlength="6"> <!-- minimo 6 caracteres para el nombre de usuario -->
             </div>
@@ -67,7 +69,7 @@
             <div class="mb-3">
               <input type="password" class="form-control" id="confirm-password" placeholder="Confirmar contraseña" required>
             </div>
-            <button type="submit" onclick="btn_crear_cuenta()" class="btn btn-primary">Crear mi cuenta</button>
+            <button type="button" onclick="formCrearCuenta()" class="btn btn-primary">Crear mi cuenta</button>
           </form>
         </div>
       </div>
@@ -89,10 +91,10 @@
         <!-- formulario del modal -->
         <form>
           <div class="mb-3">
-            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+            <input type="email" class="form-control" id="user-email" placeholder="name@example.com" required>
           </div>
           <div class="mb-3">
-            <input type="password" class="form-control" id="loginPassword" placeholder="Contraseña" required>
+            <input type="password" class="form-control" id="loginPassword" placeholder="Contraseña" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Debe contener al menos 6 caracteres, incluyendo una mayúscula, una minúscula y un número"><!-- minimo 6 caracteres para la contraseña. ademas de 1 mayuscula, minuscula, 1 numero, -->
           </div>
           <button type="submit" class="btn btn-success">Iniciar sesión</button>
         </form>
@@ -100,6 +102,8 @@
     </div>
   </div>
 </div>
+
+
 
   <!--* BARRA DE NAVEGACION -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -160,19 +164,16 @@
         <form id="searchForm">
           <div class="input-group mb-3">
 
-            <input type="text" class="form-control" placeholder="Ingrese género musical" id="genreInput">
+            <input type="text" class="form-control" placeholder="Ingrese nombre de banda y/o título del álbum" id="bandaInput">
             <button class="btn btn-outline-secondary" type="submit" id="searchButton">Buscar</button>
-            
-             <!-- <input type="text" class="form-control" placeholder="Ingrese banda musical" id="bandaInput">
-            <button class="btn btn-outline-secondary" type="submit" id="searchButton">Buscar</button> -->
             
           </div>
         </form>
       </div>
     </div>
   </div>
- 
-<!-- AADADAD -->
+  
+  
 
 
   <!-- *CUERPO PRINCIPAL CON LOS DISCOS -->

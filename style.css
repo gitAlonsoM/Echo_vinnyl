@@ -97,3 +97,18 @@ body{
     }
 
 }
+
+
+
+/* Efecto para las cards */
+.card-custom-shadow {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Suaviza la transformación y el cambio de sombra */
+    position: relative; /* Importante para que z-index funcione correctamente */
+    z-index: 1; 
+}
+.card-custom-shadow:hover {
+    transform: scale(1.02); /* Aumenta el tamaño de la tarjeta */
+    z-index: 1000; /* Aumenta el z-index para que se sobreponga sobre otras tarjetas */
+    box-shadow: 0 8px 16px rgba(0,0,0,1); 
+}
