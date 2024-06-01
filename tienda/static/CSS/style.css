@@ -1,0 +1,192 @@
+/* tienda\static\css\style.css */
+
+*{
+    font-family: monospace;
+    padding: 0;
+    margin: 0;
+
+    background-color: red I !important;
+}
+
+body{
+ 
+    background-image: url('../imagenes/patron.png'), linear-gradient(to left, #828e99, #dfe4ea);
+    
+}
+
+.contenedor-sesion{
+
+
+     background-image: url('../imagenes/patron.png'), linear-gradient(to left, #828e99, #dfe4ea);   
+}
+
+#barraNav {
+   /*  background-image: url('../imagenes/patron.png'), linear-gradient(to left,  #021323, #788697);  */
+    background: linear-gradient(to left, #021323, #788697);
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 30px 20px, rgba(0, 0, 0, 0.12) 0px 6px 10px;/*  color negro (0, 0, 0) con una opacidad del 0.35%. */
+}
+
+#barraNav .nav-link{
+    color: #ffffff; 
+    font-size: 1.1rem;
+}
+#barraNav .nav-link:hover {
+    color: #7FDBFF; 
+}
+
+.btn-primary, .btn-succes {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 30px 20px, rgba(0, 0, 0, 0.12) 0px 6px 10px; /* color negro (0, 0, 0) con una opacidad del 35% */
+}
+
+
+
+
+/* AJUSTAR IMAGENES DEL CARRUSEL */
+.carousel-item img {
+    height: 500px; /* Ajusta la altura */
+    object-fit: cover; /* Esto asegura que la imagen cubra el area sin perder sus proporciones */
+    width: 100%; /* Mantiene la imagen a lo ancho del contenedor */
+}
+
+
+.titulo {
+    text-align: center;
+    margin-top: 2vh; 
+    /* La unidad vh en CSS se refiere al "viewport height" (altura de la ventana de visualización), y 1vh es igual al 1% de la altura del viewport.  */
+    
+
+}
+
+
+#form{  /* formulario */
+    background-color: rgba(250, 246, 249, 0.7);
+    padding: 2%;
+    margin-bottom: 5%;
+    color: black;
+    font-size:large;
+    font-weight: 400;
+    border-radius: 3%;
+
+}
+
+#formTotal{   /* FORMULARIOS BACK  */
+
+   background-image: url('../imagenes/disco1.jpg'); 
+   
+    background-size: cover; /* Cubrir area sin perder las proporciones */
+    background-position: center; /* Centrar la imagen en el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin-bottom: 5vh;
+    border-radius: 3%;
+}
+#formEstandarContainer{/* FORMULARIOS BACK  */
+
+    background-image: url('../imagenes/disco2.jpg');
+
+    background-size: cover; /* Cubrir area sin perder las proporciones */
+    background-position: center; /* Centrar la imagen en el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin-bottom: 5vh;
+    border-radius: 3%;
+}
+
+/* #activePage{
+    color: black;
+    font-weight: 500;
+}
+ */
+
+/* Agregar efecto sobre la barra */
+.nav-item .nav-link:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out; /* Opcional: añade suavidad a la transición */
+}
+
+
+/* Modificar navbar tamaño y espaciado de elementos */
+.navbar-nav{
+   /*  background-color: red; */
+    width: 60vw;  /*    vh = viewport height   1vh = 1% del alto de la pantalla
+                        vw= viewport width  1vw = 1% del ancho de la pantalla  */
+
+    display: flex;
+    justify-content: space-around;
+   
+
+}
+.navbar{
+    --bs-navbar-padding-y: 0rem;
+}
+
+
+/* IMG LOGO */
+.navbar-brand img {
+    height: auto; 
+    max-height: 8vh; /* maxima altura */
+    width: auto; /* Mantener proporciones*/
+    margin-left: 10%;
+    
+}
+  
+
+
+/* BOTONES CREAR E INICIAR SESION */
+.contenedor-sesion {
+    display: flex;
+    justify-content: right;
+}
+
+
+
+
+/* Modificar el tamño de las card por debajo de los760px  */
+@media (max-width: 760px){ 
+    .card-img-top{
+        height: auto !important; /* forzar */
+    }
+
+}
+
+/* Modificar el tamño de las card por debajo de los760px  */
+@media (max-width: 990px){ 
+    #barraNav {
+        /*  background-image: url('imagenes/patron.png'), linear-gradient(to left,  #021323, #788697);  */
+         background: linear-gradient(to left, #788697, #021323) !important; 
+         box-shadow: rgba(0, 0, 0, 0.20) 0px 30px 20px, rgba(0, 0, 0, 0.12) 0px 6px 10px;/*  color negro (0, 0, 0) con una opacidad del 0.35%. */
+     }
+     
+
+}
+
+
+
+/* Efecto para las cards */
+.card-custom-shadow {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+    transition: transform 1s ease-in-out, box-shadow 0.3s ease-in-out; /* Suaviza la transformación y el cambio de sombra */
+    position: relative; /* Importante para que z-index funcione correctamente */
+    z-index: 1; 
+}
+.card-custom-shadow:hover {
+    transform: scale(1.07); /* Aumenta el tamaño de la tarjeta */
+    z-index: 1000; /* Aumenta el z-index para que se sobreponga sobre otras tarjetas */
+
+    /* Efecto de profundidad alrededor del elemento al combinarse sombras. */
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 30px 20px, rgba(0, 0, 0, 0.12) 0px 6px 10px;/*  color negro (0, 0, 0) con una opacidad del 0.35%. */
+}   
+
+
+
+
+
+/* 
+ASD !important
+
+*Los puntos en las rutas relativas se utilizan para navegar por el sistema de archivos en relación con la ubicación actual del archivo.
+Un solo punto (.): Se refiere al directorio actual. Es el equivalente a decir "aquí mismo".
+Dos puntos (..): Se refiere al directorio padre o superior al directorio actual. Es el equivalente a decir "subir un nivel en la jerarquía de directorios".
+
+
+
+
+*/
