@@ -29,81 +29,11 @@
   </head>
 
   <body>
-    
-  <!-- *Botones modal de Crear cuenta e iniciar sesion-->
-  <div class="contenedor-sesion bg-white">
-    <!--  btn-colores, mx my margenes en el eje x / y -->
-    <button type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">
-      Crear mi cuenta
-    </button>
+
+
+ {% comment %} MODALES CREAR E INICIAR SESION {% endcomment %}
+ {% include 'tienda/_modals.html' %}
   
-    <button type="button" class="btn btn-success mx-1 my-1" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">
-      Iniciar sesión
-    </button>
-  </div>
-  
-
- 
-  
-<!-- *Modal crear cuenta 
-Correcciones 1° entrega: Validar nombre y pass-->
-<div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5>CREAR CUENTA</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!-- *Formulario del modal. Solo si retorna true la funcion se enviara el form-->
-        <form id="formularioCrearCuenta" onsubmit="return formCrearCuenta()" novalidate> <!-- Novalidate. Todas las validaciones en haran en JS -->
-          <div class="mb-3">
-            <input type="text" class="form-control" id="userNameCrearCuenta" placeholder="Ingresa usuario"> 
-          </div>
-          <div class="mb-3">
-            <input type="email" class="form-control" id="userEmailCrearCuenta" placeholder="name@example.com"> 
-          </div>
-          <div class="mb-3">
-            <input type="password" class="form-control" id="userPasswordCrearCuenta" placeholder="Contraseña"> 
-          </div>
-          <div class="mb-3">
-            <input type="password" class="form-control" id="confirmPasswordCrearCuenta" placeholder="Confirmar contraseña">
-          </div>
-          <button type="submit" class="btn btn-primary">Crear mi cuenta</button> 
-      </div>
-    </div>
-  </div>
-</div>
-  
-
-
-
-  <!--* Modal de iniciar sesion -->
- <div class="modal fade" id="iniciarSesionModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5>INICIAR SESIÓN</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!-- formulario del modal -->
-        <form>
-          <div class="mb-3">
-            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
-          </div>
-          <div class="mb-3">
-            <input type="password" class="form-control" id="loginPassword" placeholder="Contraseña" required>
-          </div>
-          <button type="submit" class="btn btn-success">Iniciar sesión</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 
 
 
@@ -192,39 +122,13 @@ Correcciones 1° entrega: Validar nombre y pass-->
     </div>
 
 
-    
-
-  
-  <!-- * FORMULARIO ESTANDAR-->
-  <div class="container mt-5" id="formEstandarContainer"> <!-- mt "margin-top" rango 0 - 5 -->
-    <div class="row">
-      <div class="col-lg-6" id="form">
-        <!-- Large lg ≥992px Usado para ocupar el 50% del espacio de la pantalla. Debajo del 992 se ocupara el 100%-->
-        
-        <h2>Envíanos un mensaje</h2>
-        <p style="font-weight:400;">Responderemos todas tus dudas.</p>
-        
-        <form id="formEstandar">
-          <div class="mb-3"> <!-- mb (margin-bottom) -->
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nameFormEstandar" placeholder="Tu nombre" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="emailFormEstandar" placeholder="name@example.com" required>
-          </div>
-          <div class="mb-3">
-            <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="messageFormEstandar" rows="3" required></textarea>
-          </div>
-          <button type="button" onclick="formEstandar()" class="btn btn-primary">Enviar</button><!-- Type= button, no envia el formulario automaticamente, debe pasar las validaciones de JS antes -->         
-        </form>
-      </div>
-    </div>
-  </div>
 
 
-  <script src="{% static 'js/main.js' %}"></script>
+  {% comment %} FORMULARIO CONTACTO {% endcomment %}
+  {% include 'tienda/_formulario.html' %}
+
+
+<script src="{% static 'js/main.js' %}"></script>
 
   
   </body>

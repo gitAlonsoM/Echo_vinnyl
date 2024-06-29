@@ -1,4 +1,3 @@
-/* tienda\static\css\style.css */
 
 *{
     font-family: monospace;
@@ -89,6 +88,23 @@ body{
     margin-bottom: 5vh;
     border-radius: 3%;
 }
+
+
+.formGoogle{
+    background-image: url('../imagenes/disco2.jpg');
+
+    background-size: cover; /* Cubrir area sin perder las proporciones */
+    background-position: center; /* Centrar la imagen en el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin-bottom: 5vh;
+    border-radius: 3%;
+
+    width: 1000px;
+    height: auto;
+    align-content: center;
+}
+
+
 
 /* #activePage{
     color: black;

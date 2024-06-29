@@ -1,0 +1,69 @@
+
+<!-- Botones modal de Crear cuenta e iniciar sesion -->
+<div class="contenedor-sesion bg-white">
+  {% if user.is_authenticated %}
+    <span class="navbar-text">Bienvenido: {{ user.username }}</span>
+    <a href="{% url 'cerrar_sesion' %}" class="btn btn-danger mx-1 my-1">Cerrar sesión</a>
+  {% else %}
+    <button type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">
+      Crear mi cuenta
+    </button>
+    <button type="button" class="btn btn-success mx-1 my-1" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">
+      Iniciar sesión
+    </button>
+  {% endif %}
+</div>
+
+<!-- Modal crear cuenta -->
+<div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>CREAR CUENTA</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formularioCrearCuenta" method="POST" action="{% url 'registro' %}">
+          {% csrf_token %}
+          <div class="mb-3">
+            <input type="text" class="form-control" id="userNameCrearCuenta" name="username" placeholder="Ingresa usuario" required> 
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" id="userEmailCrearCuenta" name="email" placeholder="name@example.com" required> 
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" id="userPasswordCrearCuenta" name="password1" placeholder="Contraseña" required> 
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" id="confirmPasswordCrearCuenta" name="password2" placeholder="Confirmar contraseña" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Crear mi cuenta</button> 
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de iniciar sesion -->
+<div class="modal fade" id="iniciarSesionModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>INICIAR SESIÓN</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="{% url 'iniciar_sesion' %}">
+          {% csrf_token %}
+          <div class="mb-3">
+            <input type="text" class="form-control" id="loginUsername" name="username" placeholder="Ingresa tu usuario" required>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Contraseña" required>
+          </div>
+          <button type="submit" class="btn btn-success">Iniciar sesión</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

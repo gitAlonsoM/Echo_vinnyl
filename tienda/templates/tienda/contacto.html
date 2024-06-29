@@ -12,101 +12,30 @@
       rel="stylesheet"
     />
 
-    
     <link
       href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-
-    
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
     <!-- Favicon: Añadir imagen en el navegador superior -->
     <link rel="icon" href="{% static 'imagenes/logo.png' %}" type="image/png">
-
-
 </head>
 <body>
-  
-  <!-- *Botones modal de Crear cuenta e iniciar sesion-->
-  <div class="contenedor-sesion bg-white">
-    <!--  btn-colores, mx my margenes en el eje x / y -->
-    <button type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">
-      Crear mi cuenta
-    </button>
-  
-    <button type="button" class="btn btn-success mx-1 my-1" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">
-      Iniciar sesión
-    </button>
-  </div>
-  
 
- 
- 
-<!-- *Modal crear cuenta 
-Correcciones 1° entrega: Validar nombre y pass-->
-<div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5>CREAR CUENTA</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!-- *Formulario del modal. Solo si retorna true la funcion se enviara el form-->
-        <form id="formularioCrearCuenta" onsubmit="return formCrearCuenta()" novalidate> <!-- Novalidate. Todas las validaciones en haran en JS -->
-          <div class="mb-3">
-            <input type="text" class="form-control" id="userNameCrearCuenta" placeholder="Ingresa usuario"> 
-          </div>
-          <div class="mb-3">
-            <input type="email" class="form-control" id="userEmailCrearCuenta" placeholder="name@example.com"> 
-          </div>
-          <div class="mb-3">
-            <input type="password" class="form-control" id="userPasswordCrearCuenta" placeholder="Contraseña"> 
-          </div>
-          <div class="mb-3">
-            <input type="password" class="form-control" id="confirmPasswordCrearCuenta" placeholder="Confirmar contraseña">
-          </div>
-          <button type="submit" class="btn btn-primary">Crear mi cuenta</button> 
-      </div>
-    </div>
-  </div>
-</div>
+
+
+{% comment %} MODALES CREAR E INICIAR SESION {% endcomment %}
+{% include 'tienda/_modals.html' %}
   
 
 
 
-  <!--*  Modal de iniciar sesion -->
- <div class="modal fade" id="iniciarSesionModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5>INICIAR SESIÓN</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!-- formulario del modal -->
-        <form>
-          <div class="mb-3">
-            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
-          </div>
-          <div class="mb-3">
-            <input type="password" class="form-control" id="loginPassword" placeholder="Contraseña" required>
-          </div>
-          <button type="submit" class="btn btn-success">Iniciar sesión</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-     <!--* BARRA DE NAVEGACION -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  
+  <!-- Barra de Navegacion -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid" id="barraNav">
         <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'imagenes/logo.png' %}" alt="logo"></a> 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -115,87 +44,46 @@ Correcciones 1° entrega: Validar nombre y pass-->
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav">
-  
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}">INICIO</a>
-            </li>
-  
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'nuevos' %}">VINILOS NUEVOS</a>
-            </li>
-  
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'usados' %}">VINILOS USADOS</a>
-            </li>
-  
-            <li class="nav-item">
-              <a  class="nav-link" href="{% url 'acerca' %}">ACERCA DE</a>
-            </li>
-  
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" id="activePage" href="{% url 'contacto' %}">CONTACTO</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'carrito' %}">CARRITO</a>
-            </li>
-  
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">INICIO</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'nuevos' %}">VINILOS NUEVOS</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'usados' %}">VINILOS USADOS</a></li>
+            <li class="nav-item"><a  class="nav-link" href="{% url 'acerca' %}">ACERCA DE</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" id="activePage" href="{% url 'contacto' %}">CONTACTO</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'carrito' %}">CARRITO</a></li>
+
+            {% comment %} Solo el administrador puede visualizar esta pestaña {% endcomment %}
+            {% if user.is_authenticated and user.is_superuser %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'visualizacion' %}">VISUALIZACION</a></li>
+            {% endif %}
+
           </ul>
         </div>
       </div>
     </nav>
 
+    <h1 class="titulo">Donde los clásicos cobran vida.</h1>
+    <h2 class="titulo">Contacto</h2>
 
 
-
-
-      <h1 class="titulo">Donde los clásicos cobran vida.</h1>
-      <h2 class="titulo">Contacto</h2>
+    <!-- Mostrar mensajes de exito o error al enviar el formulario -->
+    {% if mensaje_exito %}
+      <div class="alert alert-success" role="alert">
+        {{ mensaje_exito }}
+      </div>
+    {% endif %}
+    {% if mensaje_error %}
+      <div class="alert alert-danger" role="alert">
+        {{ mensaje_error }}
+      </div>
+    {% endif %}
   
 
 
-    <!-- * FORMULARIO MAIN CONTACTO--> 
-    <div class="container mt-5" id="formEstandarContainer">
-      <div class="row">
-        <div class="col-lg-6" id="form">
+   
+    {% comment %} FORMULARIO CONTACTO {% endcomment %}
+    {% include 'tienda/_formulario.html' %}
 
-          <form id="formContacto">
-            <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombreFormContacto" placeholder="Tu nombre" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="emailFormContacto" placeholder="tu-email@ejemplo.com" required>
-            </div>
-            <div class="mb-3">
-              <label for="telefono" class="form-label">Teléfono</label>
-              <input type="tel" class="form-control" id="telefonoFormContacto" placeholder="+56912345678" required>
-            </div>
-            <div class="mb-3">
-              <label for="asunto" class="form-label">Asunto</label>
-              <input type="text" class="form-control" id="asuntoFormContacto" placeholder="Asunto del mensaje" required>
-            </div>
-            <div class="mb-3">
-              <label for="mensaje" class="form-label">Mensaje</label>
-              <textarea class="form-control" id="mensajeFormContacto" rows="3" required></textarea>
-            </div>
-            <button type="button" onclick="formContacto()" class="btn btn-primary">Enviar</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-
-  {% comment %}   <section id="iframePadre">
-
-      <iframe id="iframeid" src="https://docs.google.com/forms/d/e/1FAIpQLSdFaoKbHdX4J4MP9-FY-SnZG6vvMVyf32AvOVYcXZfOkZXAoA/viewform?embedded=true" width="640" height="884" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>   
-  </section>    
- {% endcomment %}
-    
     
     <script src="{% static 'js/main.js' %}"></script>
-
-
-
 </body>
 </html>

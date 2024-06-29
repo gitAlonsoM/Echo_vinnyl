@@ -31,81 +31,12 @@
 
 
   <body>
+
+
     
-  <!-- *Botones modal de Crear cuenta e iniciar sesion-->
-  <div class="contenedor-sesion bg-white">
-    <!--  btn-colores, mx my margenes en el eje x / y -->
-    <button type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">
-      Crear mi cuenta
-    </button>
+   {% comment %} MODALES CREAR E INICIAR SESION {% endcomment %}
+   {% include 'tienda/_modals.html' %}
   
-    <button type="button" class="btn btn-success mx-1 my-1" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">
-      Iniciar sesión
-    </button>
-  </div>
-  
-
-  
-  
-<!-- *Modal crear cuenta 
-Correcciones 1° entrega: Validar nombre y pass-->
-<div class="modal fade" id="crearCuentaModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5>CREAR CUENTA</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!-- *Formulario del modal. Solo si retorna true la funcion se enviara el form-->
-        <form id="formularioCrearCuenta" onsubmit="return formCrearCuenta()" novalidate> <!-- Novalidate. Todas las validaciones en haran en JS -->
-          <div class="mb-3">
-            <input type="text" class="form-control" id="userNameCrearCuenta" placeholder="Ingresa usuario"> 
-          </div>
-          <div class="mb-3">
-            <input type="email" class="form-control" id="userEmailCrearCuenta" placeholder="name@example.com"> 
-          </div>
-          <div class="mb-3">
-            <input type="password" class="form-control" id="userPasswordCrearCuenta" placeholder="Contraseña"> 
-          </div>
-          <div class="mb-3">
-            <input type="password" class="form-control" id="confirmPasswordCrearCuenta" placeholder="Confirmar contraseña">
-          </div>
-          <button type="submit" class="btn btn-primary">Crear mi cuenta</button> 
-      </div>
-    </div>
-  </div>
-</div>
-  
-
-
-
-  <!--* Modal de iniciar sesion -->
- <div class="modal fade" id="iniciarSesionModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5>INICIAR SESIÓN</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!-- formulario del modal -->
-        <form>
-          <div class="mb-3">
-            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
-          </div>
-          <div class="mb-3">
-            <input type="password" class="form-control" id="loginPassword" placeholder="Contraseña" required>
-          </div>
-          <button type="submit" class="btn btn-success">Iniciar sesión</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 
 
 
@@ -192,11 +123,7 @@ Correcciones 1° entrega: Validar nombre y pass-->
                         class="row mb-4 d-flex justify-content-between align-items-center"
                       >
                         <div class="col-md-2 col-lg-2 col-xl-2">
-                          <img
-                            src="imagenes/Portada_NoFound.png"
-                            class="img-fluid rounded-3"
-                            alt="imagen libro"
-                          />
+                          <img src="{% static 'imagenes/Portada_NoFound.png' %}" class="d-block w-100" alt="Imagen vinilo 4"/>
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3">
                           <h6 class="text-muted">Vinilo usado</h6>
@@ -230,11 +157,8 @@ Correcciones 1° entrega: Validar nombre y pass-->
                         class="row mb-4 d-flex justify-content-between align-items-center"
                       >
                         <div class="col-md-2 col-lg-2 col-xl-2">
-                          <img
-                            src="imagenes/Portada_NoFound.png"
-                            class="img-fluid rounded-3"
-                            alt="imagen libro"
-                          />
+                          <img src="{% static 'imagenes/Portada_NoFound.png' %}" class="d-block w-100" alt="Imagen vinilo 4"/>
+
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3">
                           <h6 class="text-muted">Vinilo usado</h6>
@@ -268,11 +192,8 @@ Correcciones 1° entrega: Validar nombre y pass-->
                         class="row mb-4 d-flex justify-content-between align-items-center"
                       >
                         <div class="col-md-2 col-lg-2 col-xl-2">
-                          <img
-                            src="imagenes/Portada_NoFound.png"
-                            class="img-fluid rounded-3"
-                            alt="imagen libro"
-                          />
+                          <img src="{% static 'imagenes/Portada_NoFound.png' %}" class="d-block w-100" alt="Imagen vinilo 4"/>
+
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3">
                           <h6 class="text-muted">Vinilo usado</h6>
@@ -357,7 +278,8 @@ Correcciones 1° entrega: Validar nombre y pass-->
     ></script>
 
 
-    <script src="{% static 'js/main.js' %}"></script>
+
+      <script src="{% static 'js/main.js' %}"></script>
 
     
   </body>
