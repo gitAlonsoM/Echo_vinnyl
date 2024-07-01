@@ -1,12 +1,12 @@
 
 
-
+{% comment %} tienda\templates\tienda\_formulario.html {% endcomment %}
     <!-- FORMULARIO MAIN CONTACTO --> 
     <div class="container mt-5" id="formEstandarContainer">
         <div class="row">
           <div class="col-lg-6 form" id="form">
-            <form id="formContacto" method="POST" action="{% url 'contacto' %}">
-              {% csrf_token %}
+            <form id="formContacto" method="POST" action="{% url 'contacto' %}"> {% comment %} especificar la URL a la que se enviarán los datos del formulario cuando el usuario lo envíe.  {% endcomment %}
+              {% csrf_token %} {% comment %} proteger el formulario contra ataques CSRF. {% endcomment %}
               <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombreFormContacto" name="nombre" placeholder="Tu nombre " required>

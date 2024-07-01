@@ -1,3 +1,4 @@
+#tienda\views.py
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
@@ -11,6 +12,7 @@ from django.contrib.auth.decorators import user_passes_test
 
 #tienda\views.py
 #Vistas basadas en funciones (vistas simples)
+#cuando el navegador solicita la URL asociada a la función index, se realiza una solicitud GET para renderizar la plantilla index.html.
 def index(request):
     return render(request, 'tienda/index.html')
 
@@ -29,16 +31,17 @@ def carrito(request):
 
 
 
-#Vistas basadas en funciones con logica adicional.. continuar
+#Vistas basadas en funciones con logica adicional.. 
+#Manejar validacion de formulario de contacto.
 def contacto(request):
-    if request.method == 'POST':
+    if request.method == 'POST': #Si el metodo del formulario es post, se extraen los datos del formulario enviados por el usuario
         nombre = request.POST['nombre']
         email = request.POST['email']
         telefono = request.POST['telefono']
         asunto = request.POST['asunto']
         mensaje = request.POST['mensaje']
         
-        try:
+        try: #Se intenta crear un nuevo con objeto en la BD con los datos del formulario
             Contacto.objects.create(
                 nombre=nombre,
                 email=email,
@@ -56,17 +59,12 @@ def contacto(request):
     return render(request, 'tienda/contacto.html')
 
 
-
-@login_required
-def visualizacion(request):
-    contactos = Contacto.objects.all()
-    return render(request, 'tienda/visualizacion.html', {'contactos': contactos})
-
+#Manejar registros de nuevos usuarios
 def registro(request):
-    if request.method == 'POST':
-        form = RegistroForm(request.POST)
-        if form.is_valid():
-            form.save()
+    if request.method == 'POST': #Si es post se guarda los datos 
+        form = RegistroForm(request.POST)  #Crea una instancia del formulario con los datos recibidos
+        if form.is_valid():  # Verifica si el formulario es válido
+            form.save()# Guarda el nuevo usuario
             mensaje_exito = "¡Cuenta creada exitosamente!"
             return render(request, 'tienda/index.html', {'mensaje_exito': mensaje_exito})
         else:
@@ -76,20 +74,25 @@ def registro(request):
         form = RegistroForm()
     return render(request, 'tienda/index.html', {'form': form})
 
+
+#Manejar inicio de sesion de usuarios ya creados usando "login"
 def iniciar_sesion(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
+        user = authenticate(request, username=username, password=password) # Autentica al usuario con las credenciales proporcionadas
+        if user is not None: # Si la autenticación es exitosa
             login(request, user)
             mensaje_exito = f"Bienvenido: {user.username}"
             return render(request, 'tienda/index.html', {'mensaje_exito': mensaje_exito})
-        else:
+        else:  # Si la autenticación falla
             mensaje_error = "Nombre de usuario o contraseña incorrectos."
             return render(request, 'tienda/index.html', {'mensaje_error': mensaje_error})
     return render(request, 'tienda/index.html')
 
+
+
+#cerrar la sesion del usuario actual utilizando la funcion logout
 def cerrar_sesion(request):
     logout(request)
     mensaje_exito = "Ha cerrado sesión exitosamente"
@@ -97,19 +100,24 @@ def cerrar_sesion(request):
 
 
 #======================================
-#USUARIO ADMINISTRADOR. Solo el tiene acceso a 'tienda/visualizacion.html'
+#*ADMIN
+#tienda\views.py
+# verifica si un usuario tiene privilegios de superusuario.
 def es_admin(user):
     return user.is_superuser
 
-@user_passes_test(es_admin)
+
+#Funcion para mostrar los mensajes del formulario contacto
+@login_required  # Decorador: Solo usuario autentificado puede acceder
+@user_passes_test(es_admin)  # Verificar si el usuario tiene privilegios de superusuario antes de permitir el acceso a la función.
 def visualizacion(request):
-    contactos = Contacto.objects.all()
-    return render(request, 'tienda/visualizacion.html', {'contactos': contactos})
+    contactos = Contacto.objects.all()  # Obtiene todos los registros del modelo Contacto
+    return render(request, 'tienda/visualizacion.html', {'contactos': contactos})  # Renderiza la plantilla 'visualizacion.html' pasando los contactos como contexto
 
 
-# Vista para eliminar contacto
-@login_required
-@user_passes_test(lambda u: u.is_superuser)
+# Eliminar un contacto específico del modelo Contacto y luego redirigir a la página de visualización de contactos.
+@login_required  # Este decorador asegura que el usuario debe estar autenticado para acceder a la función.
+@user_passes_test(lambda u: u.is_superuser)  # Este decorador verifica que el usuario es un superusuario antes de permitir el acceso a la función.
 def eliminar_contacto(request, contacto_id):
     contacto = get_object_or_404(Contacto, id=contacto_id)
     contacto.delete()

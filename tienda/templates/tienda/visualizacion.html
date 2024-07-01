@@ -23,7 +23,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for contacto in contactos %}
+                {% for contacto in contactos %}  {% comment %} Iterar en contactos y renderizar cada contacto {% endcomment %}
                 <tr>
                     <td>{{ contacto.nombre }}</td>
                     <td>{{ contacto.email }}</td>

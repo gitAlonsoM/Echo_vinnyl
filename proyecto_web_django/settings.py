@@ -79,7 +79,9 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
-
+#Verifica que la contraseña no sea demasiado similar a otros atributos del usuario
+#Asegura que la contraseña tenga una longitud mínima de caracteres.
+#Evita el uso de contraseñas comunes que son fáciles de adivinar.
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

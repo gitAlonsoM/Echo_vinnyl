@@ -1,0 +1,63 @@
+------------------------
+USUARIO ADMINISTRADOR
+
+NOMBRE: administrador
+PASS: Administrador2024
+
+------------------------
+USUARIOS NORMALES CREADOS
+
+NOMBRE:USUARIO1
+PASS: AndreZ1558
+
+NOMBRE:USUARIO2
+PASS: AndreZ1558
+
+NOMBRE:USUARIO4
+PASS: AndreZ1558
+------------------------
+
+
+_______________________________________________________
+_______________________________________________________
+EJECUTAR SERVIDOR DE DESARROLLO DJANGO
+python manage.py runserver
+
+_______________________________________________________
+MIGRAR MODELOS models.py
+Crear migracion:         python manage.py makemigrations
+Aplicar migracion:       python manage.py migrate
+
+_______________________________________________________
+ACTIVAR ENTORNO VIRTUAL: Cuando se inicia una nueva sesión en la terminal, se deberá activar en algunos casos, usar el siguiente código. Luego se puede iniciar sin problemas. 
+Activar:	.\venv\Scripts\activate
+Ejecutar:          python manage.py runserver	
+
+_______________________________________________________
+CREAR Y ACTIVAR ENTORNO VIRTUAL
+En caso de tener un proyecto Django sin el entorno virtual creado, este debe crearse y activarse en el directorio raíz del proyecto, en donde se encuentra el archivo manage.py
+
+
+Crea un nuevo entorno virtual:                     python -m venv venv
+Activa el entorno virtual:                              .\venv\Scripts\activate
+Instala Django en el entorno virtual:            pip install django 
+Ejecuta tu servidor Django:                          python manage.py runserver 
+
+_______________________________________________________
+CAMBIARSE DE CARPETA
+
+cd primeraap
+cd  ..
+
+_________________________________________________________
+CREAR USUARIO ADMIN
+python manage.py createsuperuser 
+
+_________________________________________________________
+
+
+
+
+
+
+
