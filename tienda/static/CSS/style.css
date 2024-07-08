@@ -40,13 +40,6 @@ body{
 
 
 
-/* AJUSTAR IMAGENES DEL CARRUSEL */
-.carousel-item img {
-    height: 500px; /* Ajusta la altura */
-    object-fit: cover; /* Esto asegura que la imagen cubra el area sin perder sus proporciones */
-    width: 100%; /* Mantiene la imagen a lo ancho del contenedor */
-}
-
 
 .titulo {
     text-align: center;
@@ -57,52 +50,7 @@ body{
 }
 
 
-#form{  /* formulario */
-    background-color: rgba(250, 246, 249, 0.7);
-    padding: 2%;
-    margin-bottom: 5%;
-    color: black;
-    font-size:large;
-    font-weight: 400;
-    border-radius: 3%;
 
-}
-
-#formTotal{   /* FORMULARIOS BACK  */
-
-   background-image: url('../imagenes/disco1.jpg'); 
-   
-    background-size: cover; /* Cubrir area sin perder las proporciones */
-    background-position: center; /* Centrar la imagen en el contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    margin-bottom: 5vh;
-    border-radius: 3%;
-}
-#formEstandarContainer{/* FORMULARIOS BACK  */
-
-    background-image: url('../imagenes/disco2.jpg');
-
-    background-size: cover; /* Cubrir area sin perder las proporciones */
-    background-position: center; /* Centrar la imagen en el contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    margin-bottom: 5vh;
-    border-radius: 3%;
-}
-
-
-.formGoogle{
-    background-image: url('../imagenes/disco2.jpg');
-
-    background-size: cover; /* Cubrir area sin perder las proporciones */
-    background-position: center; /* Centrar la imagen en el contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    margin-bottom: 5vh;
-    border-radius: 3%;
-
-    width: 1000px;
-    height: auto;
-    align-content: center;
-}
 
 
 
@@ -155,41 +103,9 @@ body{
 
 
 
-/* Modificar el tamño de las card por debajo de los760px  */
-@media (max-width: 760px){ 
-    .card-img-top{
-        height: auto !important; /* forzar */
-    }
-
-}
-
-/* Modificar el tamño de las card por debajo de los760px  */
-@media (max-width: 990px){ 
-    #barraNav {
-        /*  background-image: url('imagenes/patron.png'), linear-gradient(to left,  #021323, #788697);  */
-         background: linear-gradient(to left, #788697, #021323) !important; 
-         box-shadow: rgba(0, 0, 0, 0.20) 0px 30px 20px, rgba(0, 0, 0, 0.12) 0px 6px 10px;/*  color negro (0, 0, 0) con una opacidad del 0.35%. */
-     }
-     
-
-}
 
 
 
-/* Efecto para las cards */
-.card-custom-shadow {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.7);
-    transition: transform 1s ease-in-out, box-shadow 0.3s ease-in-out; /* Suaviza la transformación y el cambio de sombra */
-    position: relative; /* Importante para que z-index funcione correctamente */
-    z-index: 1; 
-}
-.card-custom-shadow:hover {
-    transform: scale(1.07); /* Aumenta el tamaño de la tarjeta */
-    z-index: 1000; /* Aumenta el z-index para que se sobreponga sobre otras tarjetas */
-
-    /* Efecto de profundidad alrededor del elemento al combinarse sombras. */
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 30px 20px, rgba(0, 0, 0, 0.12) 0px 6px 10px;/*  color negro (0, 0, 0) con una opacidad del 0.35%. */
-}   
 
 
 

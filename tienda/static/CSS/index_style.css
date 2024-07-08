@@ -1,0 +1,9 @@
+
+
+
+/* AJUSTAR IMAGENES DEL CARRUSEL */
+.carousel-item img {
+    height: 500px; /* Ajusta la altura */
+    object-fit: cover; /* Esto asegura que la imagen cubra el area sin perder sus proporciones */
+    width: 100%; /* Mantiene la imagen a lo ancho del contenedor */
+}

@@ -1,8 +1,23 @@
 ------------------------
-USUARIO ADMINISTRADOR
+USUARIOS ADMINISTRADOR
 
+Administrador con codigo:
 NOMBRE: administrador
 PASS: Administrador2024
+
+
+Administradores por comando createsuperuser:
+python manage.py createsuperuser 
+
+nombre:administrador2024
+PASS: Administrador2024
+
+nombre:administrador2025
+PASS: Administrador2024
+
+nombre:administrador2026
+PASS: Administrador2024
+
 
 ------------------------
 USUARIOS NORMALES CREADOS
@@ -13,8 +28,6 @@ PASS: AndreZ1558
 NOMBRE:USUARIO2
 PASS: AndreZ1558
 
-NOMBRE:USUARIO4
-PASS: AndreZ1558
 ------------------------
 
 

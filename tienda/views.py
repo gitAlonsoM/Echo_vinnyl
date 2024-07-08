@@ -32,6 +32,9 @@ def carrito(request):
 
 
 #Vistas basadas en funciones con logica adicional.. 
+
+
+
 #Manejar validacion de formulario de contacto.
 def contacto(request):
     if request.method == 'POST': #Si el metodo del formulario es post, se extraen los datos del formulario enviados por el usuario
@@ -56,7 +59,7 @@ def contacto(request):
             mensaje_error = "El email ya está registrado."
             return render(request, 'tienda/contacto.html', {'mensaje_error': mensaje_error})
 
-    return render(request, 'tienda/contacto.html')
+    return render(request, 'tienda/contacto.html', {'user': request.user})
 
 
 #Manejar registros de nuevos usuarios
@@ -123,4 +126,36 @@ def eliminar_contacto(request, contacto_id):
     contacto.delete()
     return redirect('visualizacion')
 
+
+
+
+""" 
+Todas las funciones de vista (views.py) que requieren renderizar una página o manejar una solicitud directa necesitan aceptar el argumento "request". 
+Esto les permite acceder a la información de la solicitud HTTP realizada por el cliente.
+La funcion render(), se utiliza para renderizar los templates y devolverlos como respuesta. Por lo tanto, las funciones de 
+vista que requieren mostrar contenido en la web, usar render() en su return.
+
+
+_______________________________________________________________________________
+El render() puede tener un "contexto",
+
+Por ejemplo:
+
+def cerrar_sesion(request):
+    logout(request)
+    mensaje_exito = "Ha cerrado sesión exitosamente"
+    return render(request, 'tienda/index.html', {'mensaje_exito': mensaje_exito})
+    
+El contexto es el diccionario {'mensaje_exito': mensaje_exito}.
+Clave: 'mensaje_exito'
+Valor: mensaje_exito, que en este caso es la cadena de texto "Ha cerrado sesión exitosamente"
+
+_______________________________________________________________________________
+
+
+eliminar_contacto:
+Django ORM: delete() es un método del ORM (Object-Relational Mapping) de Django. Este método se utiliza para eliminar una instancia de un modelo de la base de datos.
+Uso: En este caso, contacto.delete() elimina el objeto contacto de la base de datos
+
+"""
 

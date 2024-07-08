@@ -1,0 +1,60 @@
+
+/* tienda\static\CSS\carrito_style.css */
+
+
+.carrito-compras .caratula-col {
+    width: 100px; /* Ajusta el tamaño de la columna */
+    text-align: center; /* Centra el contenido de la columna */
+}
+
+.carrito-compras img {
+    width: 80px; /* Tamaño de la imagen */
+}
+
+.carrito-compras .acciones-col {
+    width: 120px; /* Ajusta el tamaño de la columna */
+    text-align: center; /* Centra el contenido de la columna */
+}
+
+
+
+
+
+/* Responsividad para pantallas de más de 551px */
+@media (min-width: 551px) {
+
+    .carrito-compras .acciones-col button .short-text {
+        display: none; /* Oculta el texto "X" */
+    }
+    .carrito-compras .acciones-col button .long-text {
+        display: inline; /* Muestra el texto "Eliminar" */
+    }
+
+
+    /* Ajuste de la tabla de carrito de compra */
+    .table-responsive {
+        width: 100%; 
+        margin: 0 auto; /* Centrar la tabla */
+        font-size: larger;
+    }
+}
+
+/* Responsividad para pantallas de 500px o menos */
+@media (max-width: 550px) {
+    .carrito-compras .caratula-col {
+        display: none;
+    }
+    .carrito-compras .acciones-col {
+        width: 50px;
+    }
+    .carrito-compras .acciones-col button {
+        width: 100%;
+        padding: 0;
+    }
+    .carrito-compras .acciones-col button .long-text {
+        display: none; /* Oculta el texto "Eliminar" */
+    }
+    .carrito-compras .acciones-col button .short-text {
+        display: inline; /* Muestra el texto "X" */
+    }
+}

@@ -22,6 +22,9 @@
 
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/form_style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/acerca_style.css' %}" />
+    
 
     <!-- Favicon: Añadir imagen en el navegador superior -->
     <link rel="icon" href="{% static 'imagenes/logo.png' %}" type="image/png">
@@ -128,7 +131,8 @@
   {% include 'tienda/_formulario.html' %}
 
 
-<script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/validadores.js' %}"></script>
 
   
   </body>

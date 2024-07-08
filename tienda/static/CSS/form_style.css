@@ -1,0 +1,42 @@
+
+
+
+#form{  /* formulario */
+    background-color: rgba(250, 246, 249, 0.7);
+    padding: 2%;
+    margin-bottom: 5%;
+    color: black;
+    font-size:large;
+    font-weight: 400;
+    border-radius: 3%;
+
+}
+
+
+#formEstandarContainer{/* FORMULARIOS BACK  */
+
+    background-image: url('../imagenes/disco2.jpg');
+
+    background-size: cover; /* Cubrir area sin perder las proporciones */
+    background-position: center; /* Centrar la imagen en el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin-bottom: 5vh;
+    border-radius: 3%;
+}
+
+
+
+/* 
+.formGoogle{
+    background-image: url('../imagenes/disco2.jpg');
+
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    margin-bottom: 5vh;
+    border-radius: 3%;
+
+    width: 1000px;
+    height: auto;
+    align-content: center;
+} */

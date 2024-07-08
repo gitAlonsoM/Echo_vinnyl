@@ -21,6 +21,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/cards_style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/form_style.css' %}" />
 
     <!-- Favicon: Añadir imagen en el navegador superior -->
     <link rel="icon" href="{% static 'imagenes/logo.png' %}" type="image/png">
@@ -42,6 +44,12 @@
 
   {% comment %} MODALES CREAR E INICIAR SESION {% endcomment %}
   {% include 'tienda/_modals.html' %}
+
+
+
+   {% comment %} Mostrar detalles de los albumes {% endcomment %}
+   {% include 'tienda/_modal_detalles.html' %}
+
   
 
 
@@ -124,7 +132,8 @@
    {% comment %} FORMULARIO CONTACTO {% endcomment %}
    {% include 'tienda/_formulario.html' %}
   
-  <script src="{% static 'js/main.js' %}"></script>
+   <script src="{% static 'js/main.js' %}"></script>
+   <script src="{% static 'js/validadores.js' %}"></script>
 
   
 </body>

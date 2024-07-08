@@ -1,34 +1,46 @@
-
-
 {% comment %} tienda\templates\tienda\_formulario.html {% endcomment %}
-    <!-- FORMULARIO MAIN CONTACTO --> 
-    <div class="container mt-5" id="formEstandarContainer">
-        <div class="row">
-          <div class="col-lg-6 form" id="form">
-            <form id="formContacto" method="POST" action="{% url 'contacto' %}"> {% comment %} especificar la URL a la que se enviarán los datos del formulario cuando el usuario lo envíe.  {% endcomment %}
-              {% csrf_token %} {% comment %} proteger el formulario contra ataques CSRF. {% endcomment %}
-              <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombreFormContacto" name="nombre" placeholder="Tu nombre " required>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="emailFormContacto" name="email" placeholder="tu_email@ejemplo.com" required>
-              </div>
-              <div class="mb-3">
-                <label for="telefono" class="form-label">Teléfono</label>
-                <input type="tel" class="form-control" id="telefonoFormContacto" name="telefono" placeholder="+56912345678" required>
-              </div>
-              <div class="mb-3">
-                <label for="asunto" class="form-label">Asunto</label>
-                <input type="text" class="form-control" id="asuntoFormContacto" name="asunto" placeholder="Asunto del mensaje" required>
-              </div>
-              <div class="mb-3">
-                <label for="mensaje" class="form-label">Mensaje</label>
-                <textarea class="form-control" id="mensajeFormContacto" name="mensaje" rows="3" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-          </div>
+<!-- FORMULARIO MAIN CONTACTO --> 
+<div class="container mt-5" id="formEstandarContainer">
+  <div class="row">
+    <div class="col-lg-6 form" id="form">
+      <form id="formContacto" method="POST" action="{% url 'contacto' %}"> {% comment %} especificar la URL a la que se enviarán los datos del formulario cuando el usuario lo envíe.  {% endcomment %}
+        {% csrf_token %} {% comment %} proteger el formulario contra ataques CSRF. {% endcomment %}
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombreFormContacto" name="nombre" placeholder="Tu nombre" minlength="6" value="{{ user.username }}" required> 
         </div>
-      </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="emailFormContacto" name="email" placeholder="tu_email@ejemplo.com" value="{{ user.email }}" required>
+        </div>
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input type="tel" class="form-control" id="telefonoFormContacto" name="telefono" placeholder="+56912345678" required>
+        </div>
+        <div class="mb-3">
+          <label for="asunto" class="form-label">Asunto</label>
+          <input type="text" class="form-control" id="asuntoFormContacto" name="asunto" placeholder="Asunto del mensaje" required>
+        </div>
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensajeFormContacto" name="mensaje" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% comment %} 
+
+
+value="{{ user.username }}": Esto establece el valor del campo de entrada como el nombre de usuario del usuario actualmente logueado.
+value="{{ user.email }}": Esto establece el valor del campo de entrada como el email del usuario actualmente logueado.
+
+Estos valores se rellenan automáticamente cuando el formulario se renderiza, asumiendo que el usuario está logueado y el contexto incluye el objeto user.
+Django agrega automáticamente el user al contexto cuando se usa RequestContext en la funcion "def contacto(request)" en views.
+
+{% endcomment %}

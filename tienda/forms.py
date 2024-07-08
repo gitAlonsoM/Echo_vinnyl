@@ -19,3 +19,4 @@ class RegistroForm(UserCreationForm): #Esta clase hereda de UserCreationForm, qu
 
 
 
+

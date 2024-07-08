@@ -38,3 +38,22 @@ class Usuario(AbstractUser):
     )
 
 
+
+
+""" 
+Tipos de campos:
+    Texto Largo: TextField --> No tiene un límite específico; se utiliza para almacenar texto más extenso sin un límite explícito de longitud.
+    Texto Corto: CharField --> Se debe especificar un límite máximo de caracteres con el parámetro max_length.
+    Email: EmailField
+    Número de Celular (o teléfono): CharField (comúnmente usado con validación adicional)
+    Contraseña: CharField (normalmente también se usa con validación adicional y hashing)
+    Booleano: BooleanField
+    Entero: IntegerField
+    Fecha y Hora: DateTimeField
+    Fecha: DateField
+    Decimal: DecimalField
+    Archivo: FileField
+    Imagen: ImageField
+
+
+"""
