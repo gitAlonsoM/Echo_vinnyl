@@ -7,6 +7,8 @@ from django.db import IntegrityError
 from .models import Contacto, Usuario
 from .forms import RegistroForm
 from django.contrib.auth.decorators import user_passes_test
+from django.views.decorators.csrf import ensure_csrf_cookie
+
 
 
 
@@ -79,6 +81,7 @@ def registro(request):
 
 
 #Manejar inicio de sesion de usuarios ya creados usando "login"
+@ensure_csrf_cookie
 def iniciar_sesion(request):
     if request.method == 'POST':
         username = request.POST['username']

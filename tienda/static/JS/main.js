@@ -38,16 +38,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     configurarBandaInicial();
 
+
+
     modalAddToCart.addEventListener('click', function() {
         agregarAlCarrito({
             title: albumActual.title,
             artist: albumActual.artist,
             releaseYear: albumActual.releaseYear,
-            price: albumActual.price,
-            cover: albumActual.cover // Añadir la carátula
+            price: albumActual.price
         });
         alert('Álbum añadido al carrito');
+        
     });
+
+
 
     //* Funcion encargada de crear dinamicamente cada card de los albumes, ademas de utilizar como img la portada del album
     function createCard(album, containerPrincipal) {
@@ -123,6 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
             mostrarDetalles(album, img.src); // Pasar la carátula al modal
         });
 
+        
+        //funcionalidad para añadir los albumes al carrito en caso de click en addCarrito
         const addCarrito = document.createElement('a');
         addCarrito.href = '#';
         addCarrito.className = 'card-link';
@@ -139,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Álbum añadido al carrito');
         });
 
+
         cardBody.appendChild(title);
         cardBody.appendChild(artist);
         card.appendChild(img);
@@ -150,15 +157,18 @@ document.addEventListener('DOMContentLoaded', function() {
         columnContainer.appendChild(card);
         containerPrincipal.appendChild(columnContainer);
 
-        test(album);
+        /* test(album) */;
     }
+
+
 
     // Funcion encargada de mostrar los detalles de cada album
     function mostrarDetalles(album, cover) {
         const modalAlbumTitle = document.getElementById('modalAlbumTitle');
         const modalArtistName = document.getElementById('modalArtistName');
         const modalReleaseYear = document.getElementById('modalReleaseYear');
-
+        const modalPrice = document.getElementById('modalPrice');
+    
         let priceValue = precioPorDefecto;
         let releaseYear = 'N/A';
         if (album['first-release-date']) {
@@ -167,19 +177,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 priceValue = releaseYear * valorConstante;
             }
         }
-
+    
         //Añadiendole propiedades(claves) y valores al objeto "albumActual"
         albumActual = {
             title: album.title,
             artist: album['artist-credit'].map(artist => artist.name).join(', '),
             releaseYear: releaseYear,
-            price: priceValue,
-            cover: cover // Añadir la carátula
+            price: priceValue
         };
-
+    
         modalAlbumTitle.textContent = album.title;
         modalArtistName.textContent = album['artist-credit'].map(artist => artist.name).join(', ');
         modalReleaseYear.textContent = releaseYear; // Mostrar el año o N/A
+        modalPrice.textContent = priceValue;
+
 
         const detallesModal = new bootstrap.Modal(document.getElementById('detallesModal'));
         detallesModal.show();
@@ -253,10 +264,13 @@ function agregarAlCarrito(album) {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
+
+
+
 //____________________________
 
 // Funcion de prueba para acceder a más elementos.
-function test(album) {
+/* function test(album) {
     contador++;
     
     console.log(` =============  Album ${contador} ==============`);
@@ -273,7 +287,9 @@ function test(album) {
     console.log("Primary Type:", album['primary-type']);
     console.log(" ");
     console.log("==================================================");
-}
+} */
+
+
 
 
 //____________________________________________________________________________
