@@ -297,13 +297,6 @@ function agregarAlCarrito(album) {
 
 
 
-
-
-
-
-
-  
-
 /*
 *DOCUMENTACION API: 
 https://musicbrainz.org/doc/MusicBrainz_API

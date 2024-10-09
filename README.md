@@ -5,7 +5,7 @@ Echo Vinyl es una aplicación web que ofrece una experiencia de compra de vinilo
 
 # Funcionalidades Principales
 
-Funciones Generales:
+* Funciones Generales:
 
 Carrusel de Imágenes: En la página de inicio, se presenta un carrusel que muestra una rotación de imágenes de vinilos, diseñado para captar la atención del usuario desde el primer momento.
 
@@ -14,7 +14,7 @@ Formulario de Búsqueda: Facilita a los usuarios la búsqueda de vinilos especí
 Tarjetas de Álbumes: Muestra una lista dinámica de álbumes obtenidos a través de dos APIs externas. Cada tarjeta incluye el nombre del álbum, el nombre de la banda, el precio, el año de lanzamiento, y ofrece botones para ver detalles del álbum o añadirlo al carrito.
 
 
-Gestión de Cuentas:
+* Gestión de Cuentas:
 
 Crear Cuenta: Proporciona un formulario para que los usuarios puedan registrarse en la plataforma. Incluye validaciones de nombre de usuario, correo electrónico y contraseña, asegurando que cada dirección de correo electrónico sea única por cuenta y que se cumplan restricciones de seguridad en el nombre de usuario y la contraseña.
 
@@ -23,12 +23,12 @@ Iniciar Sesión: Permite a los usuarios registrados acceder a sus cuentas median
 Cerrar Sesión: Ofrece una opción para que los usuarios puedan cerrar sesión, con un mensaje de confirmación que asegura que el proceso se ha completado exitosamente.
 
 
-Navegación:
+* Navegación:
 
 Barra de Navegación: Enlaces a diferentes secciones del sitio, incluyendo inicio, vinilos nuevos, vinilos usados, acerca de, contacto y carrito.
 
 
-Página de Contacto:
+* Página de Contacto:
 
 Formulario de Contacto: Permite a los usuarios enviar consultas a la tienda con validaciones de nombre, correo electrónico, teléfono, asunto y mensaje.
 
@@ -37,14 +37,14 @@ Manejo de Errores: Si el correo electrónico ya está registrado, se muestra un 
 Mensaje de Éxito: Al enviar el formulario correctamente, se muestra un mensaje de éxito en la misma página.
 
 
-Administración de Mensajes:
+* Administración de Mensajes:
 
 Visualización de Datos de Contacto: Muestra una tabla con los datos ingresados a través del formulario de contacto, accesible solo por el administrador.
 
 Eliminar Mensajes: El administrador puede eliminar mensajes resueltos, permitiendo que los correos electrónicos previamente usados puedan ser reutilizados.
 
 
-Páginas Adicionales:
+* Páginas Adicionales:
 
 Vinilos Nuevos: Presenta una lista de vinilos nuevos disponibles para la venta, permitiendo a los usuarios explorar las últimas incorporaciones.
 
